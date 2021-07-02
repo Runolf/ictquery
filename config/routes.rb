@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  get 'profile/index'
+  get 'profile/uploadcv'
+  get 'profile/sollicitations'
+  get 'profile/accountsettings'
+  
   get 'static/home'
 
   get '/jobs', to: 'jobs#index'
