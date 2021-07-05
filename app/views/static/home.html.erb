@@ -1,11 +1,72 @@
-<div class='bg-indigo-400 p-10 rounded-lg shadow-lg max-w-lg mx-auto text-white mt-8'>
-    <h1 class='font-black text-6xl text-center'>ICT query with Tailwind 2.0</h1>
 
-    <p class=text-lg mt-8>Lotte is now here</p>
+    <div class="p-10 w-full shadow-lg flex-col mx-auto text-white bg-lime-700 lg:py-24 mt-12 flex items-center justify-start ">
+        <h2 class="lg:text-5xl text-4xl font-semibold text-white leading-none ml-8 mb-6">Qiwie Jobseeker.</h2>
+        <div class="flex items-center justify-start  w-full">
+          <div class="w-full flex content-center justify-center mb-4 lg:mb-0">
+            <p class="text-white mb-2 lg:text-2xl tracking-wide">Find your ideal job, make a resume and connect with the right people.</p>            
+          </div>          
+        </div>
+      </div>
+    <div class="p-2  w-full flex content-center justify-center flex-col mx-auto text-green lg:py-12">
+      <div class="p-8 w-100 mx-auto ">
+        <h2 class="lg:text-3xl text-2xl font-semibold text-black leading-none mb-4">Make your resume here</h2>
+       
+            <a href="#" class="transition bg-lime-700 text-white px-10 py-3 rounded font-bold hover:bg-lime-600 block w-full text-center ">GET STARTED</a>
+        
+      </div>
+    </div>
+       <div class="p-10 w-full flex-col shadow-lg mx-auto text-white bg-lime-700 lg:py-16  ">
+        <h2 class="lg:text-3xl text-4xl pb-10 flex content-center justify-center font-semibold text-white leading-none mb-4">Search for jobs</h2>
+        <div class="w-full">
+          <div class="flex items-center flex-row divide-x divide-lime-700  justify-center w-full">
+            <input type="text" class="px-4 py-3 w-96 md:border-gray-200 md:focus:border-white text-black rounded-l-xl" placeholder="Search for jobs">
+            <a href="#" class="transition bg-white text-black px-5 py-3 rounded-r-xl font-bold hover:bg-lime-600 hover:text-white block text-center border-left-grey">➥
+            </a>
+          </div>          
+        </div>
+      </div>
+      <div class="w-full  mx-auto text-lime lg:py-12">
+      <div class="w-full  flex content-center justify-center flex-col">
+        <h2 class="lg:text-3xl mb-8 pb-5 text-2xl self-center flex font-semibold text-black leading-none mb-4">Our Clients</h2>
+        <div class="carousel relative shadow-2xl w-full  bg-white">
+	<div class="carousel-inner h-40 relative overflow-hidden w-full">
+	  <!--Slide 1-->
+		<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+		<div class="carousel-item absolute opacity-0" style="height:50vh;">
+			<div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">Slide 1</div>
+		</div>
+		<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+		
+		<!--Slide 2-->
+		<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item absolute opacity-0" style="height:50vh;">
+			<div class="block h-full w-full bg-orange-500 text-white text-5xl text-center">Slide 2</div>
+		</div>
+		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
+		
+		<!--Slide 3-->
+		<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item absolute opacity-0" style="height:50vh;">
+			<div class="block h-full w-full bg-green-500 text-white text-5xl text-center">Slide 3</div>
+		</div>
+		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+		<!-- Add additional indicators for each slide-->
+		<ol class="carousel-indicators">
+			<li class="inline-block mr-3">
+				<label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+			</li>
+			<li class="inline-block mr-3">
+				<label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+			</li>
+			<li class="inline-block mr-3">
+				<label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+			</li>			
+		</ol>
+		
+	</div>
 </div>
-    <p class='text-lg mt-8'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-    <p>Mikail test</p>
-
-	<p class='text-lg mt-6'>"Martin was here"</p>
-    <p>alex p in master</p>
+    </div>
