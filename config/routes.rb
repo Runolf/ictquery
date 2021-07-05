@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   get 'profile/index'
   get 'profile/uploadcv'
   get 'profile/sollicitations'
