@@ -1,5 +1,56 @@
-<h1>Articles</h1>
+<div class="bg-green-200 p-10 rounded-lg shadow-lg text-white mt-8 w-4/5 mx-auto">
+    <h1 class='font-black text-6xl text-center'>Entreprises</h1>
+</div>
 
-<% @jobs.each do |job| %>
-    <p> <%= job.name %> </p>
+
+<% @entreprises.each do |e| %>
+    <div class="bg-grey-500 rounded-lg shadow-lg mt-8 w-2/5 mx-auto hover:bg-blue-400">
+        <p class="font-black text-2xl text-center"> <%= e.name %> </p>
+        <p class="font-black text-1xl text-center"> <%= e.about %> </p>
+        <p class="font-black text-1xl text-center"> <%= e.contactMail %> </p>
+        <p class="font-black text-1xl text-center"> <%= e.contactPhone %> </p>
+    </div>
+    <br/>
 <% end %>
+
+<aside class="w-64 bg-gray-400 text-center ">
+    <p class="text-3xl">Filters</p>
+    <form>
+        <label for="postalCode">postal code</label>
+        <input id="postalCode" type="text" placeholder="Enter your postal code"/>
+        <label for="DistanceMax">Distance max</label>
+        <input id="DistanceMax" type="text" placeholder="Distance max"/>
+
+        <div class="text-1xl">Experience</div>
+        <input id="junior" type="checkbox" /> <label for="junior">junior</label>
+        <input id="medior" type="checkbox" /> <label for="medior">medior</label>
+        <input id="senior" type="checkbox" /> <label for="senior">senior</label>
+
+        <div class="text-1xl">School level</div>
+        <input type="checkbox" id="bachelor"/> <label for="bachelor">Bachelor</label>
+        <input type="checkbox" id="master"/> <label for="master">Master</label>
+
+        <div class="text-1xl">Type of contract </div>
+        <input type="checkbox" id="PartielTime"/> <label for="PartielTime">Partiel Time</label>
+        <input type="checkbox" id="HalfTime"/> <label for="HalfTime">Half time</label>
+        <input type="checkbox" id="FullTime"/> <label for="FullTime">Full time</label>
+               
+        <div class="text-1xl"> Categorie </div>
+        <input type="checkbox" id="Java"/> <label for="Java">Java</label>
+        <input type="checkbox" id=".NET" /> <label for=".NET">.NET</label>
+        <input type="checkbox" id="Python"/> <label for="Python">Python</label>
+        <input type="checkbox" id="Ruby"/> <label for="Ruby">Ruby</label>
+        <input type="checkbox" id="PHP"/> <label for="PHP">PHP</label>
+        <input type="checkbox" id="Javascript"/> <label for="Javascript">Javascript</label>
+        <button>Show in console</button>
+    </form>
+</aside>
+
+<script>
+    let btnShow = document.querySelector('button');
+    
+    btnShow.addEventListener('click', () => {
+        let checkbox = document.querySelector('input[type="checkbox"]');
+        console.log(checkbox);
+    });
+</script>

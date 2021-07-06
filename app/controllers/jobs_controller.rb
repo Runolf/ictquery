@@ -4,6 +4,7 @@ class JobsController < ApplicationController
         #airlines = Airline.all 
         #render json: AirlineSerializer.new(airlines, options).serialized_json
         @jobs = Job.all 
+        @entreprises = Entreprise.all
     end
 
     def show
