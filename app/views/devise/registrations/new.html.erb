@@ -1,3 +1,4 @@
+
 <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-8">
     <div>
@@ -5,24 +6,45 @@
         Sign up
       </h2>
     </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="rounded-md shadow-sm -space-y-px">
+    <%= f.label :username , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
+    <%= f.text_field :username, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autofocus: true %>
+  </div>
+  </br>  
+
   <div class="rounded-md shadow-sm -space-y-px">
     <%= f.label :email , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
-    <%= f.email_field :email, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
   </div>
   </br>
+
+  <div class="rounded-md shadow-sm -space-y-px">
+  <%= f.label :firstname , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
+  <%= f.text_field :firstname, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autofocus: true %>
+</div>
+</br> 
+
+<div class="rounded-md shadow-sm -space-y-px">
+<%= f.label :lastname , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
+<%= f.text_field :lastname, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autofocus: true %>
+</div>
+</br> 
+
   <div class="rounded-md shadow-sm -space-y-px">
     <%= f.label :password, :class => 'block text-gray-700 text-sm font-bold mb-2' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %>
-    <%= f.password_field :password, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autocomplete: "new-password" %>
+    <%= f.password_field :password, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
   </div>
   </br>
+
   <div class="rounded-md shadow-sm -space-y-px">
     <%= f.label :password_confirmation, :class => 'block text-gray-700 text-sm font-bold mb-2' %>
-    <%= f.password_field :password_confirmation, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
   </div>
   </br>
 
@@ -32,3 +54,4 @@
 <% end %>
 </div>
 </div>
+
