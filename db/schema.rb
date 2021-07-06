@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_115810) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "name"
-    t.datetime "dateAdded", default: -> { "now()" }
+    t.datetime "dateAdded"
     t.string "expectations"
     t.string "description"
     t.bigint "entreprises_id"
