@@ -1,15 +1,27 @@
 <% if resource.errors.any? %>
   <div id="error_explanation">
-    <h2>
-      <%= I18n.t("errors.messages.not_saved",
-                 count: resource.errors.count,
-                 resource: resource.class.model_name.human.downcase)
-       %>
-    </h2>
-    <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded relative mb-4">
+          <span class="text-xl inline-block mr-5 align-middle">
+            <i class="fas fa-bell"></i>
+          </span>
+          <span class="inline-block align-middle mr-8">
+            <b>!</b> <%= message %>
+          </span>
+          <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
+            <span>×</span>
+          </button>
+        </div>
       <% end %>
-    </ul>
   </div>
-<% end %>
+<% end %> 
+ 
+<script>
+  function closeAlert(event){
+    let element = event.target;
+    while(element.nodeName !== "BUTTON"){
+      element = element.parentNode;
+    }
+    element.parentNode.parentNode.removeChild(element.parentNode);
+  }
+</script>
