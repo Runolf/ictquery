@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'profile/sollicitations'
   get 'profile/accountsettings'
   
-  get 'static/home'
+  get '/', to: 'static#home'
 
+  get '/about', to: 'static#about'
+  get '/portfoliomaker', to: 'static#portfoliomaker'
   get '/jobs', to: 'jobs#index'
 
   root to: "static#home"
