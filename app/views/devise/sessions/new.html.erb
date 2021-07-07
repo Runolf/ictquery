@@ -1,26 +1,75 @@
-<h2>Log in</h2>
+<div class="flex flex-col h-screen bg-lime-100">
+<div class="grid place-items-center mx-2 my-20" id="nav">
+        <div class="w-full pt-2">
+            <div class="mx-auto md:p-6 md:w-1/2">
+                <% if flash.alert %>
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded relative mb-4">
+                    <span class="text-xl inline-block mr-5 align-middle">
+                      <i class="fas fa-bell"></i>
+                    </span>
+                    <span class="inline-block align-middle mr-8">
+                      <b>!</b> <%= flash.alert %>
+                    </span>
+                    <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
+                      <span>×</span>
+                    </button>
+                  </div>
+                <% end %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login, autofocus: true%>
-  </div>
+                  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">       
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <p class="text-2xl p-4 text-center">
+                    Log-in to your account
+                </p>
+                        <div class="mb-8">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="login">
+                                <span class="text-lime-500">&nbsp;*</span>
+                                Login
+                            </label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                </div>
+                                <%= f.text_field :login, :class => 'block pr-10 shadow appearance-none border-2 border-orange-100 rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-orange-500 transition duration-500 ease-in-out', placeholder:"Email or username"%>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                                <span class="text-lime-500">&nbsp;*</span>
+                                Password
+                            </label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                </div>
+                                <%= f.password_field :password, :class => "block pr-10 shadow appearance-none border-2 border-orange-100 rounded w-full py-2 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-orange-500 transition duration-500 ease-in-out"%>
+                            </div>
+                        </div>
+                        <div class="mb-4 text-center">
+                        <div class="actions">
+                            <%= f.submit "Sign in", :class => 'bg-lime-500 hover:bg-lime-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
+                        </div>
+                            </div>
+                        <hr>
+                        <div class="mt-8 text-center">
+                            <p class="text-sm">
+                                No account yet?                              
+                                <%= link_to 'Sign up', new_user_registration_path , :class => 'underline' %>
+                            </p>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<script>
+  function closeAlert(event){
+    let element = event.target;
+    while(element.nodeName !== "BUTTON"){
+      element = element.parentNode;
+    }
+    element.parentNode.parentNode.removeChild(element.parentNode);
+  }
+</script>
