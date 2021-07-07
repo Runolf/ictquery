@@ -1,17 +1,18 @@
-<div class="bg-green-200 p-10 rounded-lg shadow-lg text-white mt-8 w-4/5 mx-auto">
+<div class="text-base font-medium text-lime-600 py-2 px-4 rounded">
     <h1 class='font-black text-6xl text-center'>Entreprises</h1>
 </div>
 
-
-<% @entreprises.each do |e| %>
-    <div class="bg-grey-500 rounded-lg shadow-lg mt-8 w-2/5 mx-auto hover:bg-blue-400">
-        <p class="font-black text-2xl text-center"> <%= e.name %> </p>
-        <p class="font-black text-1xl text-center"> <%= e.about %> </p>
-        <p class="font-black text-1xl text-center"> <%= e.contactMail %> </p>
-        <p class="font-black text-1xl text-center"> <%= e.contactPhone %> </p>
+<% @jobs.each do |job| %>
+    <div class="bg-lime-600 rounded-lg shadow-lg mt-8 w-2/5 mx-auto hover:bg-lime-400">
+        <p class="font-black text-2xl text-center"> <%= @enter.name %> </p>
+        <div  class="bg-lime-200 rounded-lg shadow-lg mt-8 w-1/5 mx-auto hover:bg-lime-100"> 
+            <p class="font-black text-1xl text-center"> <a><%= job.name %></a></p>
+        </div>
+        <a class="inline-block bg-lime-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75" href="<%= job_path(job.id)%>">Voir le job</a>
     </div>
     <br/>
 <% end %>
+
 
 <aside class="w-64 bg-gray-400 text-center ">
     <p class="text-3xl">Filters</p>
