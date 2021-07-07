@@ -5,12 +5,17 @@ class JobsController < ApplicationController
         #render json: AirlineSerializer.new(airlines, options).serialized_json
         @jobs = Job.all 
         @entreprises = Entreprise.all
+
+        idE = @jobs[0].entreprises_id
+        @enter = Entreprise.find(idE)
+
+        
     end
 
     def show
         #airline  = Airline.find_by(slug: params[:slug])
         #render json: AirlineSerializer.new(airline, options).serialized_json
-        @job = Post.find(1)
+        @job = Job.find(params[:id])
     end
 
     def create
@@ -27,12 +32,12 @@ class JobsController < ApplicationController
     end
 
     def update
-        job = Job.find(1)
+        job = Job.find(params[:id])
         job.update(name: 'name upadted for id 1')
     end
 
     def destroy
-        job = Job.find(1)
+        job = Job.find(params[:id])
         job.destroy
     end
 end
