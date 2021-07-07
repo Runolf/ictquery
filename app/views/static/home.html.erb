@@ -1,3 +1,39 @@
+<div class="w-full shadow-lg flex flex-row text-white bg-teal-700 ">
+	<div class="w-2/4 flex flex-col justify-center">
+		<h2 class="lg:text-5xl text-4xl font-semibold text-white leading-none ml-8 mb-2">ICT QUERY</h2>	   
+    	<div class="w-full">
+        	<div class="w-full  mb-4 lg:mb-0">
+        		<p class="text-white mb-2 lg:text-2xl tracking-wide ml-8 ">Find your ideal job or project, create your online profile and connect with the right people.</p>            
+        	</div> 		     
+   		</div>  	
+	    <div class=" ml-8  flex flex-row divide-x-2 mt-4 divide-teal-700  w-full">
+			<input type="text" class="px-4 py-3  w-96 md:border-teal-700 md:focus:border-white text-black rounded-l-xl" placeholder="Job/Function/Project">
+			<input type="text" class="px-4 py-3 w-60  md:border-teal-700 md:focus:border-white text-black" placeholder="Postal code/Place">
+			<a href="jobs" class="transition bg-white text-black   md:border-teal-700 px-5 py-3 rounded-r-xl font-bold hover:bg-yellow-400 hover:text-white block text-center border-left-grey">
+				<%=image_tag("searchicon.png", alt: "search", width: "25px", height: "25px")%>		
+			</a>
+	    </div>   
+		<div class="flex items-center  mt-1 flex justify-center w-full">
+			<form action="/action_page.php" class="flex flex-row items-center text-white">
+				<input type="checkbox" class="form-checkbox text-red-900 rounded" id="full" name="full" value="full">
+				<label for="full" class="pr-2 ml-1">Permanent</label><br>
+				<input type="checkbox" class="form-checkbox text-red-900 rounded" id="part" name="part" value="part">
+				<label for="part" class="pr-2 pl-1">Fixed term</label><br>
+				<input type="checkbox" class="form-checkbox text-red-900 rounded" id="free" name="free" value="free">
+				<label for="free" class="pr-2 pl-1">Freelance</label><br>
+				<input type="checkbox" class="form-checkbox text-red-900 rounded" id="home" name="home" value="home">
+				<label for="home" class="pr-2 pl-1"> Work from home</label><br><br>
+			</form>
+		</div>   
+		<div class="flex justify-center">
+			<a href="portfoliomaker" class="mt-4 transition bg-white text-center text-black px-10 py-3 rounded font-bold hover:bg-yellow-400 block w-56 h-12 "> MAKE PORTFOLIO 
+			</a >   
+		</div>    		
+	</div>
+	<div class="w-2/4 flex justify-end">
+		<%=image_tag("ICTIMG.png", alt: "ICTimg")%>
+	</div>
+</div>   
 	<div class="p-10 w-full shadow-lg flex-col mx-auto text-white bg-lime-700 lg:py-24 mt-6 flex items-center justify-start ">
         <h2 class="lg:text-5xl text-4xl font-semibold text-white leading-none ml-8 mb-6">Qiwie Jobseeker.</h2>
         <div class="flex items-center justify-start  w-full">
@@ -34,109 +70,128 @@
 		  </div>       
         </div>
       </div>
+<div class="container w-full mx-auto my-6 pt-3">
+	<div class="grid grid-flow-col shadow-lg  auto-cols-max">		
+ 		    <div class="animate-fade-in-down p-5 text-center border-r border-coolGray-200">
+				<h3 class="text-center text-teal-700 lg:text-5xl text-4xl">...</h3>
+				<h4 class="lg:text-3xl text-2xl mt-3">Open vacancies</h4>
+			 </div>
+ 		    <div class="animate-fade-in-down p-5 text-center border-r border-coolGray-200">
+				<h3 class="text-center text-teal-700 lg:text-5xl text-4xl">...</h3>
+				<h4 class="lg:text-3xl text-2xl mt-3">Companies hiring</h4>
+			 </div>
+ 		    <div class="animate-fade-in-down p-5 text-center border-r border-coolGray-200">
+				<h3 class="text-center text-green-700 lg:text-5xl text-4xl">...</h3>
+				<h4 class="lg:text-3xl text-2xl mt-3">Applications</h4>
+			 </div>
+ 			<div class="animate-fade-in-down p-5 text-center border-r border-coolGray-200">
+				<h3 class="text-center text-teal-700 lg:text-5xl text-4xl">...</h3>
+				<h4 class="lg:text-3xl text-2xl mt-3">People hired</h4>
+			</div>
+			<div class="animate-fade-in-down p-5 text-center">
+				<h3 class="text-center text-teal-700 lg:text-5xl text-4xl">...</h3>
+				<h4 class="lg:text-3xl text-2xl mt-3">Companies connected</h4>
+			 </div>
+	</div>
+</div>
 
-      <div class="w-full  mx-auto text-lime lg:py-12">
-      <div class="w-full  flex content-center justify-center flex-col">
-        <h2 class="lg:text-3xl mb-8 pb-5 text-2xl self-center flex font-semibold text-black leading-none mb-4">Our Clients</h2>
-        <div class="carousel relative shadow-xl w-full  bg-white">
-	<div class="carousel-inner h-60 relative overflow-hidden w-full">
+<div class="w-full  mx-auto text-lime lg:py-4">
+    <div class="w-full  flex content-center justify-center flex-col">
+        <h2 class="lg:text-3xl text-2xl self-center flex mt-4 font-semibold text-black leading-none">Our Partners</h2>
+	  <div class="carousel relative w-full  bg-white">
+		<div class="carousel-inner max-h-72 relative overflow-hidden w-full">
 	  <!--Slide 1-->
 		<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">			
-			<img src="https://i.ibb.co/1vG2RLp/Qwie-Clients2.jpg" alt="">
+		<div class="carousel-item absolute opacity-0" >			
+			<%=image_tag("QPa1.png", alt: "partners")%>
 		</div>
-		<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+		<label for="carousel-4" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 		
 		<!--Slide 2-->
 		<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">
-			<img src="https://i.ibb.co/4sgxgQ7/QC2.jpg" alt ="">
+		<div class="carousel-item absolute opacity-0" >
+			<%=image_tag("QPa2.png", alt: "partners")%>
 		</div>
-		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
+		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
 		
 		<!--Slide 3-->
 		<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">
-			<img src="https://i.ibb.co/X7Dvrdh/QC3.jpg" alt ="">
+		<div class="carousel-item absolute opacity-0" >
+			<%=image_tag("QPa3.png", alt: "partners")%>
 		</div>
-		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-		<label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-4" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+		
+		<!--Slide 4-->
+		<input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item absolute opacity-0" >
+			<%=image_tag("QPa4.png", alt: "partners")%>
+		</div>
+		<label for="carousel-3" class="prev control-4 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-1" class="next control-4 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-transparent hover:bg-teal-600  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
 		<!-- Add additional indicators for each slide-->
 		<ol class="carousel-indicators">
 			<li class="inline-block mr-3">
-				<label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-grey hover:text-blue-700">•</label>
+				<label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-grey-100 hover:text-teal-600">•</label>
 			</li>
 			<li class="inline-block mr-3">
-				<label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-grey hover:text-blue-700">•</label>
+				<label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-grey-100 hover:text-teal-600">•</label>
 			</li>
 			<li class="inline-block mr-3">
-				<label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-grey hover:text-blue-700">•</label>
+				<label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-grey-100 hover:text-teal-600">•</label>
+			</li>			
+			<li class="inline-block mr-3">
+				<label for="carousel-4" class="carousel-bullet cursor-pointer block text-4xl text-grey-100 hover:text-teal-600">•</label>
 			</li>			
 		</ol>
 		
+		</div>
+	  </div>
 	</div>
 </div>
-    </div>
-	<div class="container w-full flex items-center m-10 justify-center">
-		<div class="grid grid-flow-col p-3 divide-x divide-green-500 auto-cols-max">
-			<div class="p-3">
-				<h3>Succesvol werk met</h3>
-				<h3 class="text-center text-green-500">1.056</h3>
-				<h4>Tevreden klanten</h4>
-			</div>
- 		    <div class="p-3">
-				<h3>Gelanceerde campagnes</h3>
-				<h3 class="text-center text-green-500">5.391</h3>
-				<h4>Gelanceerde campagnes</h4>
-			 </div>
- 		    <div class="p-3">
-				<h3>Succesvolle campagnes</h3>
-				<h3 class="text-center text-green-500">4.245</h3>
-				<h4>Ingevulde vacatures</h4>
-			 </div>
- 			<div class="p-3">
-				<h3>Kandidaten per campagne</h3>
-				<h3 class="text-center text-green-500">25</h3>
-				<h4>Sollicitaties gemiddeld</h4>
-			 </div>
-		</div>
-	</div>
+
+
+
+
+<style>
+	.carousel-open:checked + .carousel-item {
+		position: static;
+		opacity: 100;
+	}
+	.carousel-item {
+		-webkit-transition: opacity 0.6s ease-out;
+		transition: opacity 0.6s ease-out;
+	}
+	#carousel-1:checked ~ .control-1,
+	#carousel-2:checked ~ .control-2,
+	#carousel-3:checked ~ .control-3,
+	#carousel-4:checked ~ .control-4 {
+		display: block;
+	}
+	.carousel-indicators {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		bottom: 2%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		z-index: 10;
+	}
+	#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+	#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+	#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
+	#carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet {
+		color: #0D9488;  /*Set to match the Tailwind colour you want the active one to be */
+	}
+</style>
 
 
 
 
 
-<!-- <script>
-	var slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-
-</script> -->
