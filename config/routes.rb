@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  get 'profile/index'
-  get 'profile/uploadcv'
-  get 'profile/sollicitations'
-  get 'profile/accountsettings'
+  get '/profile', to: 'profile#index'
+  get '/profile/uploadcv', to: 'profile#uploadcv'
+  get '/profile/sollicitations', to: 'profile#sollicitations'
+  get '/profile/accountsettings', to: 'profile#accountsettings'
   
   get '/', to: 'static#home'
 
