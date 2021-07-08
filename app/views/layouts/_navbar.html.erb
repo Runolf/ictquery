@@ -1,48 +1,49 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <header>
-  <nav class="max-w-8xl w-full mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-    <div class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+  <div class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
       
-        <span class="w-52">
-            <%= link_to image_tag("/ictquery_logo.png"), "/" %>
-        </span>
-          
-        <div class="hidden ml-10 space-x-8 lg:block">
-        <div class="hidden ml-10 space-x-16 lg:block">
-          <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
-          <%= link_to 'Jobs', '/jobs' %>
-          </button>
-          <% if user_signed_in? %> 
-            <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
-            <%= link_to 'Portfolio Maker', 'portfolio' %>
-            </button>
-          <% end %>
-          <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
-          <%= link_to 'About', 'about' %>
-
-          </button>
-        </div>
-      </div>
-      <div class="ml-10 space-x-4">
-        <% if user_signed_in? %>  
-            <button class="inline-block bg-gray-600 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
-            <%= link_to 'Profile', 'profile' %>
-            </button>
-            <button class="inline-block bg-indigo-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
-            <%= link_to 'Log off', destroy_user_session_path, method: :delete %>
-            </button>
-        <% else %>    
-            <button class="inline-block bg-indigo-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
-            <%= link_to 'Log in', new_user_session_path %>
-            </button>
-            <button class="inline-block py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-400 hover:bg-opacity-75">
-            <%= link_to 'Register', new_user_registration_path %>
-            </button>
-        <% end %>
-
-      
-    </div>
+  <span class="w-52">
+      <%= link_to image_tag("/ictquery_logo.png"), "/" %>
+  </span>
     
+  <div class="hidden ml-10 space-x-8 lg:block">
+
+    
+  <div class="hidden ml-10 space-x-16 lg:block">
+    <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
+    <%= link_to 'Jobs', '/jobs' %>
+    </button>
+    <% if user_signed_in? %> 
+      <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
+      <%= link_to 'Portfolio Maker', 'portfolio' %>
+      </button>
+    <% end %>
+    <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
+    <%= link_to 'About', 'about' %>
+
+    </button>
+  </div>
+</div>
+<div class="ml-10 space-x-4">
+  <% if user_signed_in? %>  
+      <button class="inline-block bg-gray-600 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+      <%= link_to 'Profile', 'profile' %>
+      </button>
+      <button class="inline-block bg-indigo-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+      <%= link_to 'Log off', destroy_user_session_path, method: :delete %>
+      </button>
+  <% else %>    
+      <button class="inline-block bg-indigo-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75">
+      <%= link_to 'Log in', new_user_session_path %>
+      </button>
+      <button class="inline-block py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-400 hover:bg-opacity-75">
+      <%= link_to 'Register', new_user_registration_path %>
+      </button>
+  <% end %>
+
+
+</div>
   </nav>
 </header>
 <script>
