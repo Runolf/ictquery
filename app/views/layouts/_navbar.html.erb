@@ -1,29 +1,20 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <header>
-  <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+  <nav class="max-w-8xl w-full mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
     <div class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
-      <div class="flex items-center">
+      
         <span class="w-52">
             <%= link_to image_tag("/ictquery_logo.png"), "/" %>
         </span>
           
         <div class="hidden ml-10 space-x-8 lg:block">
-
-          <button class="text-base transition duration-300 font-medium text-lime-600 hover:bg-lime-600 py-2 px-4 rounded hover:text-white">
-          <%= link_to 'Jobs', '/jobs' %>
-          </button>
-          <button class="text-base transition duration-300 font-medium text-lime-600 hover:bg-lime-600 py-2 px-4 rounded hover:text-white">
-          <%= link_to 'Portfolio Maker', 'portfolio' %>
-          </button>
-          <button class="text-base transition duration-300 font-medium text-lime-600 hover:bg-lime-600 py-2 px-4 rounded hover:text-white">
-          <%= link_to 'About', '/about' %>
         <div class="hidden ml-10 space-x-16 lg:block">
           <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
           <%= link_to 'Jobs', '/jobs' %>
           </button>
           <% if user_signed_in? %> 
             <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
-            <%= link_to 'Portfolio Maker', 'portfoliomaker' %>
+            <%= link_to 'Portfolio Maker', 'portfolio' %>
             </button>
           <% end %>
           <button class="text-base transition duration-300 font-medium text-grey-600 hover:bg-gray-600 py-2 px-4 rounded hover:text-white">
@@ -49,7 +40,7 @@
             </button>
         <% end %>
 
-      </div>
+      
     </div>
     
   </nav>
