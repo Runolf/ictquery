@@ -1,57 +1,54 @@
-
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-md w-full space-y-8">
-    <div>
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-        Sign up
-      </h2>
+<div class="flex h-screen bg-gray-200 items-center justify-center">
+  <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
+    <div class="flex justify-center py-4">
+      <div class="flex-none bg-lime-200 rounded-full md:p-4 p-2 border-2 border-purple-300">
+        <img width="70" height="70" src="data:image/svg+xml;base64,PHN2ZyBpZD0iRmlsbGVkT3V0bGluZSIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IGZpbGw9IiNlM2U0ZTIiIGhlaWdodD0iMzkyIiByeD0iMjQiIHdpZHRoPSIzNjgiIHg9IjU2IiB5PSIyNCIvPjxwYXRoIGQ9Im00MDAgMjRoLTMyMGEyNCAyNCAwIDAgMCAtMjQgMjR2NDBoMzY4di00MGEyNCAyNCAwIDAgMCAtMjQtMjR6IiBmaWxsPSIjMDA5M2I5Ii8+PHBhdGggZD0ibTQ0MC4yMjQgNDk1LjU3OGgtODh2LTE0NGgtNjIuNzQ1YTE3LjI1NSAxNy4yNTUgMCAwIDEgLTE3LjI1NS0xNy4yNTUgMTcuMjU1IDE3LjI1NSAwIDAgMSAxNC41NjQtMTcuMDQ0bDExNi40NTItMTguMzg3YTI0IDI0IDAgMCAxIDI2LjgyIDE3LjExM2wxMC4xNjQgMzUuNTczeiIgZmlsbD0iI2Y1YmU5YSIvPjxwYXRoIGQ9Im00NzEuNzcyIDM1MS41NzhoLTIyMy41NDhsLTEyLjYzMiA4LjQyMmgtMTkuNTkyYTggOCAwIDAgMCAtOCA4IDggOCAwIDAgMCA4IDhoMjAuODU2bDExLjM2OCA3LjU3OGgyMjRhMTYgMTYgMCAwIDAgMTUuOTgyLTE2Ljc3M2MtLjQwNi04LjYwNS03LjgxOC0xNS4yMjctMTYuNDM0LTE1LjIyN3oiIGZpbGw9IiMwMDkzYjkiLz48cGF0aCBkPSJtNDg4LjIyNCAzNjcuNTc4YTE2IDE2IDAgMCAwIC0xNi0xNmgtMTZ2MzJoMTZhMTYgMTYgMCAwIDAgMTYtMTZ6IiBmaWxsPSIjZTNlNGUyIi8+PHBhdGggZD0ibTM1Mi4yMjQgNDQ3LjU3OC0xNy43MTctNy4wODZhMzUuNDUgMzUuNDUgMCAwIDEgLTIyLjI4My0zMi45MTRsLTI3LjAyNC0yNy4wMjlhMTYuOTcgMTYuOTcgMCAwIDEgLTQuOTcxLTEyIDE2Ljk3MSAxNi45NzEgMCAwIDEgMTYuOTcxLTE2Ljk3MWgzLjAyM2ExNi45NzIgMTYuOTcyIDAgMCAxIDcuNTg5IDEuNzkybDYwLjQxNyAzMC4yMDggMjQgMjR6IiBmaWxsPSIjZjViZTlhIi8+PHBhdGggZD0ibTk2IDEyOGgxMjh2MTI4aC0xMjh6IiBmaWxsPSIjMDA5M2I5Ii8+PGNpcmNsZSBjeD0iMTYwIiBjeT0iMTg0IiBmaWxsPSIjZjZiYzFiIiByPSIyNCIvPjxwYXRoIGQ9Im0xMjggMjU2di0xNmEzMiAzMiAwIDAgMSAzMi0zMiAzMiAzMiAwIDAgMSAzMiAzMnYxNnoiIGZpbGw9IiNmNmJjMWIiLz48cGF0aCBkPSJtNjQgMzkydi0yOTZoMzUydjE4NGgxNnYtMjMyYTMyLjAzNiAzMi4wMzYgMCAwIDAgLTMyLTMyaC0zMjBhMzIuMDM2IDMyLjAzNiAwIDAgMCAtMzIgMzJ2MzQ0YTMyLjAzNiAzMi4wMzYgMCAwIDAgMzIgMzJoMTkydi0xNmgtMTkyYTE2LjAxOSAxNi4wMTkgMCAwIDEgLTE2LTE2em0xNi0zNjBoMzIwYTE2LjAxOSAxNi4wMTkgMCAwIDEgMTYgMTZ2MzJoLTM1MnYtMzJhMTYuMDE5IDE2LjAxOSAwIDAgMSAxNi0xNnoiLz48cGF0aCBkPSJtODAgNDhoMTZ2MTZoLTE2eiIvPjxwYXRoIGQ9Im0xMTIgNDhoMTZ2MTZoLTE2eiIvPjxwYXRoIGQ9Im0xNDQgNDhoMTZ2MTZoLTE2eiIvPjxwYXRoIGQ9Im00NzIgMzQ0aC0yNS45NjVsLTguNTA3LTI5Ljc3MmEzMi4wMzYgMzIuMDM2IDAgMCAwIC0zNS43NTktMjIuODE3bC0xMTYuNDUzIDE4LjM4OWEyNS4yMzkgMjUuMjM5IDAgMCAwIC0xOS41NTIgMzQuMmgtMTcuNzY0YTguMDA1IDguMDA1IDAgMCAwIC00LjQzOCAxLjM0NGwtMjEuOTg0IDE0LjY1NmgtMTMuNTc4djE2aDEzLjU3OGwyMS45ODQgMTQuNjU2YTguMDA1IDguMDA1IDAgMCAwIDQuNDM4IDEuMzQ0aDM2LjY4NmwxOS40NDggMTkuNDQ3YTQzLjIxNCA0My4yMTQgMCAwIDAgMjcuMTc4IDM2Ljg5NGwxMi42ODggNS4wNzV2NDIuNTg0aDE2di00OGE4IDggMCAwIDAgLTUuMDI4LTcuNDI4bC0xNy43MTgtNy4wODdhMjcuMzE1IDI3LjMxNSAwIDAgMSAtMTcuMjU0LTI1LjQ4NSA4IDggMCAwIDAgLTIuMzQzLTUuNjU3bC0yNy4wMjktMjcuMDNhOC45NyA4Ljk3IDAgMCAxIDYuMzQzLTE1LjMxM2gzLjAyM2E5LjAwOCA5LjAwOCAwIDAgMSA0LjAxMS45NDdsNTkuMjU2IDI5LjYyOCAyMy4wODIgMjMuMDgyIDExLjMxNC0xMS4zMTQtMTAuMzQzLTEwLjM0M2g0NC42ODZ2MTA0aDE2di0xMDRoMjRhMjQgMjQgMCAwIDAgMC00OHptLTIzMy41NzggMjQgMTItOGgyMy4yNTFhMjQuOTk0IDI0Ljk5NCAwIDAgMCAtLjY3IDE2aC0yMi41ODF6bTU4LjU0OS0yNGgtNy43MTZhOS4yNTUgOS4yNTUgMCAwIDEgLTEuNDQzLTE4LjRsMTE2LjQ1My0xOC4zODdhMTYuMDA3IDE2LjAwNyAwIDAgMSAxNy44NzkgMTEuNDA4bDcuMjUgMjUuMzc5aC00Mi4wOGwxMC4zNDMtMTAuMzQzLTExLjMxNC0xMS4zMTQtMjEuNjU2IDIxLjY1N3ptNzIuOTE4IDMyLTMyLTE2aDExMC4xMTF2MTZ6bTEwMi4xMTEgMGgtOHYtMTZoOGE4IDggMCAwIDEgMCAxNnoiLz48cGF0aCBkPSJtMjMyIDI1NnYtMTI4YTggOCAwIDAgMCAtOC04aC0xMjhhOCA4IDAgMCAwIC04IDh2MTI4YTggOCAwIDAgMCA4IDhoMTI4YTggOCAwIDAgMCA4LTh6bS03Mi00MGEyNC4wMjggMjQuMDI4IDAgMCAxIDI0IDI0djhoLTQ4di04YTI0LjAyOCAyNC4wMjggMCAwIDEgMjQtMjR6bS0xNi0zMmExNiAxNiAwIDEgMSAxNiAxNiAxNi4wMTkgMTYuMDE5IDAgMCAxIC0xNi0xNnptNzIgNjRoLTE2di04YTM5Ljk5NCAzOS45OTQgMCAwIDAgLTE3LjYzMi0zMy4xNDYgMzIgMzIgMCAxIDAgLTQ0LjczNiAwIDM5Ljk5NCAzOS45OTQgMCAwIDAgLTE3LjYzMiAzMy4xNDZ2OGgtMTZ2LTExMmgxMTJ6Ii8+PHBhdGggZD0ibTEyOCAyODBoOTZ2MTZoLTk2eiIvPjxwYXRoIGQ9Im05NiAyODBoMTZ2MTZoLTE2eiIvPjxwYXRoIGQ9Im0yOTYgMTM2aDk2djE2aC05NnoiLz48cGF0aCBkPSJtMjY0IDE2OGgxMjh2MTZoLTEyOHoiLz48cGF0aCBkPSJtMjY0IDIwMGgxMjh2MTZoLTEyOHoiLz48cGF0aCBkPSJtMjY0IDIzMmgxMjh2MTZoLTEyOHoiLz48cGF0aCBkPSJtMjY0IDEzNmgxNnYxNmgtMTZ6Ii8+PHBhdGggZD0ibTQ0OCA1NmgxNnYxNjBoLTE2eiIvPjxwYXRoIGQ9Im00NDggMjMyaDE2djE2aC0xNnoiLz48cGF0aCBkPSJtOTEuNjEgMzQ1LjQzNS0xMS4wMzggMjcuNTk0IDE0Ljg1NiA1Ljk0MiA5LjM4NC0yMy40NTkgNC45OTMgOS45ODdhMTQgMTQgMCAwIDAgMjAuMjg4IDUuMzg3bDEyLjg4Ny04LjU5MiA5LjYwNSA5LjYwNWExMy45MDcgMTMuOTA3IDAgMCAwIDkuOSA0LjFoMjkuNTE1di0xNS45OTloLTI4LjY4N2wtMTAuMTc3LTEwLjE3OWExNC4wMzcgMTQuMDM3IDAgMCAwIC0xNy42NjYtMS43NDlsLTEyLjM3IDguMjQ0LTUuOTcyLTExLjk0NGExNCAxNCAwIDAgMCAtMjUuNTIxIDEuMDYzeiIvPjwvc3ZnPg==" />
+      </div>
     </div>
-    <%= render "devise/shared/error_messages", resource: resource %>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="flex justify-center">
+      <div class="flex">
+        <h1 class="text-gray-600 font-bold md:text-2xl text-xl">Create your account!</h1>
+      </div>
+    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="grid grid-cols-1 mt-5 mx-12">
+      <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Username</label>
+      <%= f.text_field :username, :class => "w-full py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent", placeholder:"johnsmith"%>
+      </div>
 
-  <div class="rounded-md shadow-sm -space-y-px">
-    <%= f.label :username , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
-    <%= f.text_field :username, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight', autofocus: true %>
-  </div>
-  </br>  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+      <div class="grid grid-cols-1">
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Firstname</label>
+        <%= f.text_field :firstname, :class => "w-full py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent", placeholder:"John"%>
+      </div>
+      <div class="grid grid-cols-1">
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Lastname</label>
+        <%= f.text_field :lastname, :class => "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent", placeholder:"Smith"%>
+      </div>
+    </div>
 
-  <div class="rounded-md shadow-sm -space-y-px">
-    <%= f.label :email , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
-    <%= f.email_field :email, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
-  </div>
-  </br>
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Mail</label>
+      <%= f.email_field :email, :class => "w-full py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent", placeholder:"johnsmith@mail.com"%>
+    </div>
 
-  <div class="rounded-md shadow-sm -space-y-px">
-  <%= f.label :firstname , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
-  <%= f.text_field :firstname, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
-</div>
-</br> 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7 mb-8">
+      <div class="grid grid-cols-1">
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Password</label>
+        <%= f.password_field :password, :class => "w-full py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"%>
+      </div>
+      <div class="grid grid-cols-1">
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Password Confirmation</label>
+        <%= f.password_field :password_confirmation, :class => "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"%>
+      </div>
+    </div>
 
-<div class="rounded-md shadow-sm -space-y-px">
-<%= f.label :lastname , :class => 'block text-gray-700 text-sm font-bold mb-2'%>
-<%= f.text_field :lastname, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
-</div>
-</br> 
-
-  <div class="rounded-md shadow-sm -space-y-px">
-    <%= f.label :password, :class => 'block text-gray-700 text-sm font-bold mb-2' %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
+    <%= f.submit "Sign up", :class => 'w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'%>
+    </div>
     <% end %>
-    <%= f.password_field :password, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
   </div>
-  </br>
-
-  <div class="rounded-md shadow-sm -space-y-px">
-    <%= f.label :password_confirmation, :class => 'block text-gray-700 text-sm font-bold mb-2' %>
-    <%= f.password_field :password_confirmation, :class => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight'%>
-  </div>
-  </br>
-
-  <div class="actions">
-    <%= f.submit "Sign up", :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
-  </div>
-<% end %>
 </div>
-</div>
-
