@@ -23,7 +23,7 @@
         <input id="DistanceMax" type="text" placeholder="Distance max"/>
 
         <div class="text-1xl">Experience</div>
-        <input id="junior" type="checkbox" /> <label for="junior">junior</label>
+        <input name="juniorBox" id="junior" type="checkbox" value="junior" /> <label for="junior">junior</label>
         <input id="medior" type="checkbox" /> <label for="medior">medior</label>
         <input id="senior" type="checkbox" /> <label for="senior">senior</label>
 
@@ -43,15 +43,30 @@
         <input type="checkbox" id="Ruby"/> <label for="Ruby">Ruby</label>
         <input type="checkbox" id="PHP"/> <label for="PHP">PHP</label>
         <input type="checkbox" id="Javascript"/> <label for="Javascript">Javascript</label>
-        <button>Show in console</button>
+        <input value="show in console" type="button" onClick="show()" style="back-groundcolor: blue; width: 200px"/>
     </form>
 </aside>
 
 <script>
-    let btnShow = document.querySelector('button');
+    console.log("i'm in jobs page");
+
+    juniorBox = document.getElementById("junior").value;
     
-    btnShow.addEventListener('click', () => {
-        let checkbox = document.querySelector('input[type="checkbox"]');
-        console.log(checkbox);
-    });
+
+    console.log(juniorBox);
+
+    function show(){
+        console.log("in method show");
+        var juniorIsChecked = document.getElementById("junior"); 
+        if(juniorIsChecked.checked == true)
+        {
+            console.log("is checked :)");
+        }
+        else{
+            console.log("not checked or not entered in the if...")
+        }
+    }
+
+
+
 </script>
