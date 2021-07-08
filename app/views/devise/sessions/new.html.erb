@@ -1,5 +1,5 @@
 <div class="flex flex-col h-screen bg-lime-100">
-<div class="grid place-items-center mx-2 my-20" id="nav">
+    <div class="grid place-items-center mx-2 my-20" id="nav">
         <div class="w-full pt-2">
             <div class="mx-auto md:p-6 md:w-1/2">
                 <% if flash.alert %>
@@ -8,7 +8,7 @@
                       <i class="fas fa-bell"></i>
                     </span>
                     <span class="inline-block align-middle mr-8">
-                      <b>!</b> <%= flash.alert %>
+                      <%= flash.alert %>
                     </span>
                     <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" onclick="closeAlert(event)">
                       <span>×</span>
@@ -20,7 +20,7 @@
                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                     <p class="text-2xl p-4 text-center">
                     Log-in to your account
-                </p>
+                    </p>
                         <div class="mb-8">
                           <label class="block text-gray-700 text-sm font-bold mb-2" for="login">
                                 <span class="text-lime-500">&nbsp;*</span>
