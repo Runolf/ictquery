@@ -2,68 +2,66 @@
     <h1 class='font-black text-6xl text-center'>Entreprises</h1>
 </div>
 
-<% @jobs.each do |job| %>
-    <div class="bg-lime-600 rounded-lg shadow-lg mt-8 w-2/5 mx-auto hover:bg-lime-400">
-        <p class="font-black text-2xl text-center"> <%= @enter.name %> </p>
-        <div  class="bg-lime-200 rounded-lg shadow-lg mt-8 w-1/5 mx-auto hover:bg-lime-100"> 
-            <p class="font-black text-1xl text-center"> <a><%= job.name %></a></p>
-        </div>
-        <a class="inline-block bg-lime-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75" href="<%= job_path(job.id)%>">Voir le job</a>
-    </div>
-    <br/>
-<% end %>
-
-
-<aside class="w-64 bg-gray-400 text-center ">
-    <p class="text-3xl">Filters</p>
+<aside class="float-left bg-lime-700 rounded-lg shadow-lg w-64 text-center p-2">
+    <p class="text-3xl text-lime-500">Filters</p>
     <form>
-        <label for="postalCode">postal code</label>
-        <input id="postalCode" type="text" placeholder="Enter your postal code"/>
-        <label for="DistanceMax">Distance max</label>
-        <input id="DistanceMax" type="text" placeholder="Distance max"/>
+        <label class="text-xl text-lime-200" for="postalCode">postal code</label>
+        <input class="text-lg" id="postalCode" type="text" placeholder="Enter your postal code"/>
+        <label class="text-xl text-lime-200" for="DistanceMax">Distance max</label>
+        <input class="text-lg" id="DistanceMax" type="text" placeholder="Distance max"/>
 
-        <div class="text-1xl">Experience</div>
-        <input name="juniorBox" id="junior" type="checkbox" value="junior" /> <label for="junior">junior</label>
-        <input id="medior" type="checkbox" /> <label for="medior">medior</label>
-        <input id="senior" type="checkbox" /> <label for="senior">senior</label>
+        <div class="text-xl text-lime-200">Experience</div>
+        <input type="checkbox" id="box1" value="junior" /> <label class="text-lg text-lime-200" for="box1">junior</label>
+        <input type="checkbox" id="box2" value="medior"/> <label class="text-lg text-lime-200" for="box2">medior</label>
+        <input type="checkbox" id="box3" value="senior"/> <label class="text-lg text-lime-200" for="box3">senior</label>
 
-        <div class="text-1xl">School level</div>
-        <input type="checkbox" id="bachelor"/> <label for="bachelor">Bachelor</label>
-        <input type="checkbox" id="master"/> <label for="master">Master</label>
+        <div class="text-xl text-lime-200">School level</div>
+        <input type="checkbox" id="box4" value="bachelor"/> <label class="text-lg text-lime-200" for="box4">Bachelor</label>
+        <input type="checkbox" id="box5" value="master"/> <label class="text-lg text-lime-200" for="box5">Master</label>
 
-        <div class="text-1xl">Type of contract </div>
-        <input type="checkbox" id="PartielTime"/> <label for="PartielTime">Partiel Time</label>
-        <input type="checkbox" id="HalfTime"/> <label for="HalfTime">Half time</label>
-        <input type="checkbox" id="FullTime"/> <label for="FullTime">Full time</label>
+        <div class="text-xl text-lime-200">Type of contract </div>
+        <input type="checkbox" id="box6" value="partieltime"/> <label class="text-lg text-lime-200" for="box6">Partiel Time</label>
+        <input type="checkbox" id="box7" value="halftime"/> <label class="text-lg text-lime-200" for="box7">Half time</label>
+        <input type="checkbox" id="box8" value="fulltime"/> <label class="text-lg text-lime-200" for="box8">Full time</label>
                
-        <div class="text-1xl"> Categorie </div>
-        <input type="checkbox" id="Java"/> <label for="Java">Java</label>
-        <input type="checkbox" id=".NET" /> <label for=".NET">.NET</label>
-        <input type="checkbox" id="Python"/> <label for="Python">Python</label>
-        <input type="checkbox" id="Ruby"/> <label for="Ruby">Ruby</label>
-        <input type="checkbox" id="PHP"/> <label for="PHP">PHP</label>
-        <input type="checkbox" id="Javascript"/> <label for="Javascript">Javascript</label>
-        <input value="show in console" type="button" onClick="show()" style="back-groundcolor: blue; width: 200px"/>
+        <div class="text-xl text-lime-200"> Categorie </div>
+        <input type="checkbox" id="box9"  value="java"/> <label class="text-lg text-lime-200" for="box9">Java</label>
+        <input type="checkbox" id="box10" value=".net"/> <label class="text-lg text-lime-200" for="box10">.NET</label>
+        <input type="checkbox" id="box11" value="python"/> <label class="text-lg text-lime-200" for="box11">Python</label>
+        <input type="checkbox" id="box12" value="ruby"/> <label class="text-lg text-lime-200" for="box12">Ruby</label>
+        <input type="checkbox" id="box13" value="php"/> <label class="text-lg text-lime-200" for="box13">PHP</label>
+        <input type="checkbox" id="box14" value="javascript"/> <label class="text-lg text-lime-200" for="box14">Javascript</label>
+        
+        <input value="show the results" type="button" onClick="show()" style="back-groundcolor: blue; width: 200px"/>
     </form>
 </aside>
 
+<% @entreprises.each do |ent| %>
+    <div class="bg-lime-600 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
+        <p class="font-black text-2xl text-center"> <%= ent.name %> </p>
+        <% @jobs.each do |job| %>
+            <% if job.entreprises_id == ent.id %>
+                <div  class="flex justify-around flex-wrap font-black text-1xl text-center"> 
+                    <a class="bg-lime-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-lime-300" href="<%= job_path(job.id)%>"><%= job.name %></a>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>
+
 <script>
-    console.log("i'm in jobs page");
-
-    juniorBox = document.getElementById("junior").value;
-    
-
-    console.log(juniorBox);
-
+    /*Filter*/
+    var inputs = document.getElementsByTagName("input");
     function show(){
-        console.log("in method show");
-        var juniorIsChecked = document.getElementById("junior"); 
-        if(juniorIsChecked.checked == true)
-        {
-            console.log("is checked :)");
-        }
-        else{
-            console.log("not checked or not entered in the if...")
+        for(var i = 1;  i <= inputs.length -3; i++){ // -3 to avoid the texts and button inputs. 
+            var nameBox = document.getElementById("box"+i).value;
+            
+            if(document.getElementById("box"+i).checked == true){
+                console.log(nameBox + " is checked");
+                /* write next steps for the filter here*/
+            }else{ 
+                console.log(nameBox + " not checked or not entered in the it from the for loop...");
+            }
         }
     }
 
