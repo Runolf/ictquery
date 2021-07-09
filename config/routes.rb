@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  
   devise_for :users
   resources :portfolio
+
   get '/profile', to: 'profile#index'
-  get '/profile/uploadcv', to: 'profile#uploadcv'
-  get '/profile/sollicitations', to: 'profile#sollicitations'
-  get '/profile/accountsettings', to: 'profile#accountsettings'
+  get '/uploads', to: 'uploads#index'
+  get '/sollicitations', to: 'sollicitations#index'
+  get 'accountsettings', to: 'accountsettings#index'
+
+  get '/accountsettings', to: 'profile#accountsettings'
   get '/', to: 'static#home'
 
   get '/about', to: 'static#about'
