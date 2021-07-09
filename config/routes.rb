@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/profile/accountsettings', to: 'profile#accountsettings'
   get '/', to: 'static#home'
 
+  get '/search' => 'pages#search', :as => 'search_page'
+
   get '/about', to: 'static#about'
   
   get '/jobs', to: 'jobs#index'

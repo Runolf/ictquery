@@ -3,17 +3,16 @@
 		<h2 class="lg:text-5xl text-4xl font-semibold text-white leading-none ml-8 mb-2">ICT QUERY</h2>	   
     	<div class="w-full">
         	<div class="w-full  mb-4 lg:mb-0">
-        		<p class="text-white mb-2 lg:text-2xl tracking-wide ml-8 ">Find your ideal job or project, create your online profile and connect with the right people.</p>            
+        		<p class="text-white mb-2 lg:text-2xl tracking-wide ml-8 ">Find the ideal job or project and connect with the right people.</p>            
         	</div> 		     
-   		</div>  	
-	    <div class=" ml-8  flex flex-row divide-x-2 mt-4 divide-teal-700  w-full">
-			<input type="text" class="px-4 py-3  w-96 md:border-teal-700 md:focus:border-white text-black rounded-l-xl" placeholder="Job/Function/Project">
-			<input type="text" class="px-4 py-3 w-60  md:border-teal-700 md:focus:border-white text-black" placeholder="Postal code/Place">
-			<a href="jobs" class="transition bg-white text-black   md:border-teal-700 px-5 py-3 rounded-r-xl font-bold hover:bg-yellow-400 hover:text-white block text-center border-left-grey">
-				<%=image_tag("searchicon.png", alt: "search", width: "25px", height: "25px")%>		
-			</a>
-	    </div>   
-		<div class="flex items-center  mt-1 flex justify-center w-full">
+   		</div>  
+		   <%= form_tag(search_page_path, :method => "get",   
+		   class: 'form ml-8  flex flex-row divide-x mt-4 divide-teal-700  w-full') do %>  
+		 <div class="input-group w-full">  
+		   <%= search_field_tag :search, params[:search], placeholder: "Job/Function/Project", class: "form-control px-4 py-3  w-3/5 md:border-teal-700 md:focus:border-white text-black rounded-l-xl" %>  
+		   <%= search_field_tag :search, params[:search], placeholder: "Postal code/Place", class: "form-control px-4 py-3 w-56  md:border-teal-700 md:focus:border-white text-black rounded-r-xl" %>  
+		   <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>		  
+		   <div class="flex items-center w-9/10  justify-center">
 			<form action="/action_page.php" class="flex flex-row items-center text-white">
 				<input type="checkbox" class="form-checkbox text-red-900 rounded" id="full" name="full" value="full">
 				<label for="full" class="pr-2 ml-1">Permanent</label><br>
@@ -24,54 +23,60 @@
 				<input type="checkbox" class="form-checkbox text-red-900 rounded" id="home" name="home" value="home">
 				<label for="home" class="pr-2 pl-1"> Work from home</label><br><br>
 			</form>
-		</div>   
-		<div class="flex justify-center">
-			<a href="portfoliomaker" class="mt-4 transition bg-white text-center text-black px-10 py-3 rounded font-bold hover:bg-yellow-400 block w-56 h-12 "> MAKE PORTFOLIO 
-			</a >   
-		</div>    		
+			</div> 
+		
+		 </div>  
+	   <% end %>	
+	    <!-- <div class=" ml-8  flex flex-row divide-x mt-4 divide-teal-700  w-full">
+			<input type="text" class="px-4 py-3  w-96 md:border-teal-700 md:focus:border-white text-black rounded-l-xl" placeholder="Job/Function/Project">
+			<input type="text" class="px-4 py-3 w-60  md:border-teal-700 md:focus:border-white text-black" placeholder="Postal code/Place">
+			<a href="jobs" class="transition bg-white text-black   md:border-teal-700 px-5 py-3 rounded-r-xl font-bold hover:bg-yellow-500 block text-center border-left-grey">
+				<%=image_tag("searchicon.png", alt: "search", width: "25px", height: "25px")%>		
+			</a>
+	    </div>    -->
+  
+		  		
 	</div>
 	<div class="w-2/4 flex justify-end">
 		<%=image_tag("ICTIMG.png", alt: "ICTimg")%>
 	</div>
 </div>   
-	<div class="p-10 w-full shadow-lg flex-col mx-auto text-white bg-lime-700 lg:py-24 mt-6 flex items-center justify-start ">
-        <h2 class="lg:text-5xl text-4xl font-semibold text-white leading-none ml-8 mb-6">Qiwie Jobseeker.</h2>
-        <div class="flex items-center justify-start  w-full">
-          <div class="w-full flex content-center justify-center mb-4 lg:mb-0">
-            <p class="text-white mb-2 lg:text-2xl tracking-wide">Find your ideal job, make a resume and connect with the right people.</p>            
-          </div>          
-        </div>
-      </div>
-    <div class="p-2  w-full flex content-center justify-center flex-col mx-auto text-green lg:py-12">
-      <div class="p-8 w-100 mx-auto ">
-        <h2 class="lg:text-3xl text-2xl font-semibold text-black leading-none mb-4">Make your resume here</h2>
-            <a href="#" class="transition bg-lime-700 text-white px-10 py-3 rounded font-bold hover:bg-lime-600 block w-full text-center ">GET STARTED</a>
-    </div>
-    </div>
-       <div class="p-10 w-full flex-col shadow-lg mx-auto text-white bg-lime-700 lg:py-16  ">
-        <h2 class="lg:text-3xl text-4xl pb-10 flex content-center justify-center font-semibold text-white leading-none mb-4">Search for 
-         </h2>
-        <div class="w-full">
-          <div class="flex items-center flex-row divide-x divide-lime-700  justify-center w-full">
-            <input type="text" class="px-4 py-3 w-96 md:border-gray-200 md:focus:border-white text-black rounded-l-xl" placeholder="Job/Function">
-            <input type="text" class="px-4 py-3 w-80 md:border-gray-200 md:focus:border-white text-black" placeholder="Postal code/Place">
-            <a href="#" class="transition bg-white text-black px-5 py-3 rounded-r-xl font-bold hover:bg-lime-600 hover:text-white block text-center border-left-grey">➥
-            </a>
-          </div>   
-		  <div class="flex items-center  mt-4 justify-center w-full">
-			<form action="/action_page.php" class="flex flex-row items-center">
-				<input type="checkbox" id="full" name="full" value="full">
-				<label for="full" class="pr-2"> Full time</label><br>
-				<input type="checkbox" id="part" name="part" value="part">
-				<label for="part" class="pr-2"> Part time</label><br>
-				<input type="checkbox" id="home" name="home" value="home">
-				<label for="home" > Work from home</label><br><br>
-			  </form>
-		  </div>       
-        </div>
-      </div>
-<div class="container w-full mx-auto my-6 pt-3">
-	<div class="grid grid-flow-col shadow-lg  auto-cols-max">		
+
+<div class="w-full flex flex-row justify-around items-center text-black p-4 ">
+	<div>
+		<img src="https://zacomic.com/wp-content/uploads/2020/05/Portfolio-Main-Cover-CM.jpg" alt="" style="margin:1em;height:20em; width:34em;">
+	</div>
+	<div class="flex justify-start flex-col w-3/5 p-4">
+		<% if user_signed_in? %> 
+		<div class="flex flex-col">
+			<h1 class="text-3xl">Create your online portfolio so employers<br> can see your skills and experience.</h1>
+			<div class="flex flex-row w-2/3 justify-between  items-center mt-4">
+				<a href="/portfolio" class="transition bg-yellow-500 my-4 flex justify-center items-center text-black hover:text-white py-3 rounded font-bold hover:bg-yellow-600 block w-48 h-10 "> CREATE RESUME ▶ 
+				</a >   
+				<a href="/profile" class="transition bg-teal-600 flex justify-center items-center text-white hover:text-black py-3 rounded font-bold hover:bg-teal-500 block w-48 h-10 "> GO TO PROFILE ▶
+				</a > 
+			</div>
+			  
+		</div>
+		<% else %> 
+		<div class="flex flex-col">
+			<h1 class="text-3xl">Create your online portfolio so employers<br> can see your skills and experience.</h1>
+			<a href="/users/sign_in" class="transition bg-yellow-500 my-4 flex justify-center items-center text-black hover:text-white py-3 rounded font-bold hover:bg-yellow-600 block w-44 h-10 "> LOGIN ▶ 
+			</a >   
+		</div>
+		<div class="flex flex-col mt-2">
+		<h2 class="text-3xl ">Don't have an account yet?</h2>
+		<a href="/users/sign_up" class="ransition bg-teal-600 my-4 flex justify-center items-center text-white hover:text-black py-3 rounded font-bold hover:bg-teal-500 block w-44 h-10"> REGISTER ▶
+		</a >   
+		</div>
+		<% end %>
+	</div>
+</div>
+	
+   
+<div class="w-full h-60 bg-teal-700 py-4 p-3 flex flex-col items-center">
+	<div class="container shadow-lg w-full mt-2 bg-white mx-auto">
+		<div class="grid grid-flow-col shadow-lg  auto-cols-max">		
  		    <div class="animate-fade-in-down p-5 text-center border-r border-coolGray-200">
 				<h3 class="text-center text-teal-700 lg:text-5xl text-4xl">...</h3>
 				<h4 class="lg:text-3xl text-2xl mt-3">Open vacancies</h4>
@@ -92,8 +97,13 @@
 				<h3 class="text-center text-teal-700 lg:text-5xl text-4xl">...</h3>
 				<h4 class="lg:text-3xl text-2xl mt-3">Companies connected</h4>
 			 </div>
+		</div>
 	</div>
-</div>
+	<div class="flex items-center my-6">
+		<a href="/about"  class="text-2xl text-white mr-4 hover:underline">Would you like to get to know us better?</a> 
+	</div>
+</div>      
+
 
 <div class="w-full  mx-auto text-lime lg:py-4">
     <div class="w-full  flex content-center justify-center flex-col">
