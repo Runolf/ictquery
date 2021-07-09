@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_115810) do
     t.string "username", default: "", null: false
     t.string "firstname", default: "", null: false
     t.string "lastname", default: "", null: false
+    t.date  "birthdate", default: "", null: false
     t.bigint "adresses_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
