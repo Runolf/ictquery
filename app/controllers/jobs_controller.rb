@@ -4,15 +4,8 @@ class JobsController < ApplicationController
         @jobs = Job.all 
         @entreprises = Entreprise.all
 
-        
-
         idE = @jobs[0].entreprises_id
         @enter = Entreprise.find(idE)
-
-        # 1: get all entreprises
-        # 2: get the jobs by entreprises 
-
-
         
     end
     

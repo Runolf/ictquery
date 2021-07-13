@@ -50,9 +50,19 @@
 <% end %>
 
 <script>
+
     /*Filter*/
     var inputs = document.getElementsByTagName("input");
+
     function show(){
+        
+        var codePostal = document.getElementById("postalCode").value;
+        var distanceMax = document.getElementById("DistanceMax").value;
+        // console.log(codePostal);
+        // console.log(distanceMax);
+
+
+
         for(var i = 1;  i <= inputs.length -3; i++){ // -3 to avoid the texts and button inputs. 
             var nameBox = document.getElementById("box"+i).value;
             
