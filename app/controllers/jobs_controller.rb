@@ -3,6 +3,7 @@ class JobsController < ApplicationController
     def index
         @jobs = Job.all 
         @entreprises = Entreprise.all
+        @jobs = Job.search(params[:search])
 
         idE = @jobs[0].entreprises_id
         @enter = Entreprise.find(idE)
