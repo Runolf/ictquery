@@ -3,6 +3,7 @@ class JobsController < ApplicationController
     def index
         @jobs = Job.all 
         @entreprises = Entreprise.all
+        @jobs = Job.search(params[:search])
 
         
 
