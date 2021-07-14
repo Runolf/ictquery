@@ -1,5 +1,17 @@
-<h3>Search Result</h3>  
+<div class="flex flex-col items-center">
 
-    <% Job.all.each do |job| %>  
+<h3>Search</h3>  
+
+<% if (@results.empty?) %>
+    <h5>No results found.</h5>
+<% else %>
+    <% @results.each do |job| %>  
         <%= job.name %><br>  
     <% end %>
+<% end %>
+
+</div>
+
+
+  
+

@@ -9,7 +9,7 @@
 		   <%= form_tag(search_page_path, :method => "get",   
 		   class: 'form ml-8  flex flex-row divide-x mt-4 divide-teal-700  w-full') do %>  
 		 <div class="input-group w-full">  
-		   <%= search_field_tag :search, params[:search], placeholder: "Job/Function/Project", class: "form-control px-4 py-3  w-3/5 md:border-teal-700 md:focus:border-white text-black rounded-l-xl" %>  
+		   <%= search_field_tag :search, params[:search], placeholder: "Job/Function/Project", class: "form-control px-4 py-3  w-11/12 md:border-teal-700 md:focus:border-white text-black rounded-xl" %>  
 		   <!-- <%= search_field_tag :search, params[:search], placeholder: "Postal code/Place", class: "form-control px-4 py-3 w-56  md:border-teal-700 md:focus:border-white text-black rounded-r-xl" %>   -->
 		   <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>		  
 		   <div class="flex items-center w-9/10  justify-center">
@@ -44,7 +44,7 @@
 
 <div class="w-full flex flex-row justify-around items-center text-black p-4 ">
 	<div>
-		<img src="https://zacomic.com/wp-content/uploads/2020/05/Portfolio-Main-Cover-CM.jpg" alt="" style="margin:1em;height:20em; width:34em;">
+		<img src="https://zacomic.com/wp-content/uploads/2020/05/Portfolio-Main-Cover-CM.jpg" alt="" style="margin:1em;height:20em; width:32em;">
 	</div>
 	<div class="flex justify-start flex-col w-3/5 p-4">
 		<% if user_signed_in? %> 

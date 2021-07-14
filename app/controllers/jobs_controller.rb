@@ -10,11 +10,9 @@ class JobsController < ApplicationController
 
         idE = @jobs[0].entreprises_id
         @enter = Entreprise.find(idE)
-        
-
-
-    end
     
+    end
+
     def show
         @job = Job.find(params[:id])
     end
