@@ -4,6 +4,7 @@
 
 <aside class="float-left bg-lime-700 rounded-lg shadow-lg w-64 text-center p-2">
     <p class="text-3xl text-lime-500">Filters</p>
+    <!-- 
     <form>
         <label class="text-xl text-lime-200" for="postalCode">postal code</label>
         <input class="text-lg" id="postalCode" type="text" placeholder="Enter your postal code"/>
@@ -34,6 +35,13 @@
         
         <input value="show the results" type="button" onClick="show()" style="back-groundcolor: blue; width: 200px"/>
     </form>
+    -->
+
+    <%= search_form_for @q do |j|%>
+        <%= j.label :name_cont, 'Technology?' %>
+        <%= j.search_field :name_cont %>
+        <%= j.submit %>
+    <% end %>
 </aside>
 
 <% @entreprises.each do |ent| %>

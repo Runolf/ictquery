@@ -1,13 +1,18 @@
 class JobsController < ApplicationController
     protect_from_forgery with: :null_session #avoid the need to have a token
     def index
-        @jobs = Job.all 
-        @entreprises = Entreprise.all
-        @jobs = Job.search(params[:search])
+       # @jobs = Job.all 
+
+       @q = Job.ransack(params[:q])
+       @jobs = @q.result
+       
+       @entreprises = Entreprise.all
 
         idE = @jobs[0].entreprises_id
         @enter = Entreprise.find(idE)
         
+
+
     end
     
     def show
