@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'ransack'
 
 # Use Active Storage variant
+gem 'carrierwave', '~> 2.0'
 # gem 'image_processing', '~> 1.2'
 gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem 'omniauth'

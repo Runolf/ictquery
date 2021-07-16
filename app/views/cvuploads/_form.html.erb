@@ -1,0 +1,22 @@
+<%= form_with(model: cvupload) do |form| %>
+  <% if cvupload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cvupload.errors.count, "error") %> prohibited this cvupload from being saved:</h2>
+
+      <ul>
+        <% cvupload.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.file_field :text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

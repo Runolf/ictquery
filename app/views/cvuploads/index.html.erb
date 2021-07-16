@@ -1,0 +1,36 @@
+
+<div class="bg-gray-50 h-screen w-screen">
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+
+        <div class=" bg-gray-50 w-4/5  mt-10 mx-auto text-center space-x-6 p-10">
+                <button class="bg-blue-500 m-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to 'Profile', 'profile' %></button>
+                <button class="bg-green-500 m-2 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"><%= link_to 'Upload CV', 'cvuploads' %></button>
+                <button class="bg-blue-500 m-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to 'Sollicitations', 'sollicitations' %></button>
+                <button class="bg-blue-500 m-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to 'Account Settings', 'accountsettings' %></button>
+        </div>
+       
+        
+
+<div class="bg-blue-100 w-4/5 mx-auto text-center">
+        
+        <h1 class='font-black text-4xl text-center'>Upload a CV<h1>
+
+  <tbody>
+
+    <% @cvuploads.each do |cvupload| %>
+      <tr>
+        <td><%= cvupload.text %></td>
+        <td><%= link_to 'Show', cvupload %></td>
+        <td><%= link_to 'Edit', edit_cvupload_path(cvupload) %></td>
+        <td><%= link_to 'Destroy', cvupload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cvupload', new_cvupload_path %>
+
+</div>
+</div>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :cvuploads
   devise_for :users
 
   get '/profile', to: 'profile#index'
-  get '/uploads', to: 'uploads#index'
+  get '/cvuploads', to: 'cvuploads#index'
   get '/sollicitations', to: 'sollicitations#index'
   get 'accountsettings', to: 'accountsettings#index'
 
