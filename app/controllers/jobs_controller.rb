@@ -6,11 +6,9 @@ class JobsController < ApplicationController
        @q = Job.ransack(params[:q])
        @jobs = @q.result
        
-       @entreprises = Entreprise.all
+      # @qEnter = Entreprise.ransack(params[:qEnter])
+      # @entreprises = @qEnter.result    
 
-        idE = @jobs[0].entreprises_id
-        @enter = Entreprise.find(idE)
-    
     end
 
     def show

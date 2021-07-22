@@ -2,87 +2,21 @@
     <h1 class='font-black text-6xl text-center'>Entreprises</h1>
 </div>
 
-<aside class="float-left bg-lime-700 rounded-lg shadow-lg w-64 text-center p-2">
-    <p class="text-3xl text-lime-500">Filters</p>
-    <!-- 
-    <form>
-        <label class="text-xl text-lime-200" for="postalCode">postal code</label>
-        <input class="text-lg" id="postalCode" type="text" placeholder="Enter your postal code"/>
-        <label class="text-xl text-lime-200" for="DistanceMax">Distance max</label>
-        <input class="text-lg" id="DistanceMax" type="text" placeholder="Distance max"/>
+<!--
+    Filtre:
+        * Code postal
+        * Max distance
+    Experience
+        Junior, Medior, Senior
+    School level
+        Bachelor, Master
+    Type de contrat
+        Partiel time, half time, full time
+    Categorie
+        Javascript, Python, Ruby, C#, Java, ...
+-->
 
-        <div class="text-xl text-lime-200">Experience</div>
-        <input type="checkbox" id="box1" value="junior" /> <label class="text-lg text-lime-200" for="box1">junior</label>
-        <input type="checkbox" id="box2" value="medior"/> <label class="text-lg text-lime-200" for="box2">medior</label>
-        <input type="checkbox" id="box3" value="senior"/> <label class="text-lg text-lime-200" for="box3">senior</label>
 
-        <div class="text-xl text-lime-200">School level</div>
-        <input type="checkbox" id="box4" value="bachelor"/> <label class="text-lg text-lime-200" for="box4">Bachelor</label>
-        <input type="checkbox" id="box5" value="master"/> <label class="text-lg text-lime-200" for="box5">Master</label>
-
-        <div class="text-xl text-lime-200">Type of contract </div>
-        <input type="checkbox" id="box6" value="partieltime"/> <label class="text-lg text-lime-200" for="box6">Partiel Time</label>
-        <input type="checkbox" id="box7" value="halftime"/> <label class="text-lg text-lime-200" for="box7">Half time</label>
-        <input type="checkbox" id="box8" value="fulltime"/> <label class="text-lg text-lime-200" for="box8">Full time</label>
-               
-        <div class="text-xl text-lime-200"> Categorie </div>
-        <input type="checkbox" id="box9"  value="java"/> <label class="text-lg text-lime-200" for="box9">Java</label>
-        <input type="checkbox" id="box10" value=".net"/> <label class="text-lg text-lime-200" for="box10">.NET</label>
-        <input type="checkbox" id="box11" value="python"/> <label class="text-lg text-lime-200" for="box11">Python</label>
-        <input type="checkbox" id="box12" value="ruby"/> <label class="text-lg text-lime-200" for="box12">Ruby</label>
-        <input type="checkbox" id="box13" value="php"/> <label class="text-lg text-lime-200" for="box13">PHP</label>
-        <input type="checkbox" id="box14" value="javascript"/> <label class="text-lg text-lime-200" for="box14">Javascript</label>
-        
-        <input value="show the results" type="button" onClick="show()" style="back-groundcolor: blue; width: 200px"/>
-    </form>
-    -->
-
-    <%= search_form_for @q do |j|%>
-        <%= j.label :name_cont, 'Technology?' %>
-        <%= j.search_field :name_cont %>
-        <%= j.submit %>
-    <% end %>
-</aside>
-
-<% @entreprises.each do |ent| %>
-    <div class="bg-lime-600 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
-        <p class="font-black text-2xl text-center"> <%= ent.name %> </p>
-        <% @jobs.each do |job| %>
-            <% if job.entreprises_id == ent.id %>
-                <div  class="flex justify-around flex-wrap font-black text-1xl text-center"> 
-                    <a class="bg-lime-400 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-lime-300" href="<%= job_path(job.id)%>"><%= job.name %></a>
-                </div>
-            <% end %>
-        <% end %>
-    </div>
+<%= @jobs.each do |job| %>
+    <p><%= job.name %></p>
 <% end %>
-
-<script>
-
-    /*Filter*/
-    var inputs = document.getElementsByTagName("input");
-
-    function show(){
-        
-        var codePostal = document.getElementById("postalCode").value;
-        var distanceMax = document.getElementById("DistanceMax").value;
-        // console.log(codePostal);
-        // console.log(distanceMax);
-
-
-
-        for(var i = 1;  i <= inputs.length -3; i++){ // -3 to avoid the texts and button inputs. 
-            var nameBox = document.getElementById("box"+i).value;
-            
-            if(document.getElementById("box"+i).checked == true){
-                console.log(nameBox + " is checked");
-                /* write next steps for the filter here*/
-            }else{ 
-                console.log(nameBox + " not checked or not entered in the it from the for loop...");
-            }
-        }
-    }
-
-
-
-</script>
