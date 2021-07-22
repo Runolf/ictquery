@@ -39,7 +39,7 @@
 							</div>
 
 							<div x-show="step === 3">
-								<div class="text-lg font-bold text-gray-700 leading-tight">Tell me about yourself</div>
+								<div class="text-lg font-bold text-gray-700 leading-tight">Your projects</div>
 							</div>
 						</div>
 
@@ -54,7 +54,7 @@
 				<!-- /Top Navigation -->
 
 				<!-- Step Content -->
-				<div class="py-10">	
+		<div class="py-10">	
 					<div x-show.transition.in="step === 1">
 						<div class="mb-5 text-center">
 							<div class="mx-auto w-32 h-32 mb-2 border rounded-full relative bg-gray-100 mb-4 shadow-inset">
@@ -86,14 +86,14 @@
 							<label for="firstname" class="font-bold mb-1 text-gray-700 block">Firstname</label>
 							<input type="text" value=<%=@user.firstname%>
 								class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
-								placeholder="Enter your firstname...">
+								placeholder="Enter your first name...">
 						</div>            
 
 						<div class="mb-5">
 							<label for="lastname" class="font-bold mb-1 text-gray-700 block">Lastname</label>
 							<input type="text" value=<%=@user.lastname%>
 								class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
-								placeholder="Enter your lastname...">
+								placeholder="Enter your last name...">
 						</div>
 
 						<div class="mb-5">
@@ -166,7 +166,7 @@
 						<div class="mb-5">
 							<label for="password" class="font-bold mb-1 text-gray-700 block">Tips</label>
 							<div class="text-gray-600 mt-2 mb-4">
-								Please give us access to your data! (Linkedin, Github, Old companies, ...)
+								Please give us access to your data! (LinkedIn, Github, Old companies, ...)
 							</div>
 						</br>
 						<div class="grid grid-flow-col text-justify border border-gray-200 p-4">
@@ -181,7 +181,7 @@
 								<label for="description" class="font-bold mb-1 text-gray-700 block" maxlength="60">Description</label>
 								<input type="text" id="step2_desc"
 									class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
-									placeholder="Personnal github account">
+									placeholder="Personal github account">
 							</div>
 							<div class="p-5">
 							<button onclick="myFunction()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow py-2 px-4">
@@ -199,41 +199,69 @@
 								</table>	
 							</div>
 						<div>	
-					</div>
-					<div x-show.transition.in="step === 3">
-						<div class="mb-5">
-							<label for="email" class="font-bold mb-1 text-gray-700 block">Gender</label>
-							
-							<div class="flex">
-								<label
-									class="flex justify-start items-center text-truncate rounded-lg bg-white pl-4 pr-6 py-3 shadow-sm mr-4">
-									<div class="text-teal-600 mr-3">
-										<input type="radio" x-model="gender" value="Male" class="form-radio focus:outline-none focus:shadow-outline" />
-									</div>
-									<div class="select-none text-gray-700">Male</div>
-								</label>
-
-								<label
-									class="flex justify-start items-center text-truncate rounded-lg bg-white pl-4 pr-6 py-3 shadow-sm">
-									<div class="text-teal-600 mr-3">
-										<input type="radio" x-model="gender" value="Female" class="form-radio focus:outline-none focus:shadow-outline" />
-									</div>
-									<div class="select-none text-gray-700">Female</div>
-								</label>
-							</div>
-						</div>
-						<div class="mb-5">
-							<label for="profession" class="font-bold mb-1 text-gray-700 block">Profession</label>
-							<input type="profession"
-								class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
-								placeholder="eg. Web Developer">
-						</div>
-					</div>
+					</div>				
 					</div>
 				</div>
-				<!-- / Step Content -->
-			</div>
-		</div>
+			</div>	
+				<div x-show.transition.in="step === 3">
+					<div class="mb-5">						
+						<div class="text-gray-600 mt-2 mb-4">
+							Show us the projects you have worked on!
+						</div>
+					</div>
+						
+					<div class="mb-5">						
+						<fieldset class="border border-solid border-gray-300 p-5">
+							<legend class="text-sm p-2">Project</legend>
+							<div class="mb-5 max-w-sm">
+								<label for="Title" class="font-bold mb-1 text-gray-700 block pr-2">Title</label>
+								<input type="text" id="title" name="title" class="border-b border-grey-400 outline-none  shadow-sm  focus:border-b focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"></input>
+							</div>
+							<div class="mb-5">
+								<label for="Title" class="font-bold mb-1 text-gray-700 block pr-2">Description</label>
+								<textarea type="text" id="description" name="description" rows=4 class="border border-grey-400 outline-none shadow-sm  focus:border focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+							</div>
+							<div class="mb-5 ">
+								<label for="Title" class="font-bold mb-1 text-gray-700 block pr-2">Images</label>
+								<span>
+								<input type="file" multiple accept="image/*" id="images" name="images" class="border border-grey-400 outline-none shadow-sm  focus:border focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"></input>
+								</span>
+								<!-- <div id="preview" class="flex flex-row pt-4 w-full flex-wrap"></div> -->
+								<div class="flex flex-row pt-4 w-full flex-wrap">
+									<output class="flex flex-row  flex-wrap relative" id="list"></output>
+								</div>
+							</div>
+							<div class="mb-5">
+								<label for="Title"class="font-bold mb-1 self-end text-gray-700 block pr-2">Videos</label>
+								<input type="file"  multiple onchange="previewVideo(event)"  accept="video/*" id="videos" name="videos" class="border border-grey-400 outline-none shadow-sm  focus:border focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"></input>
+								<div id="videoPreview" class="pt-4 w-full flex flex-row flex-wrap"></div>
+							</div>
+							<div class="mb-5">
+								<label for="link" class="font-bold mb-1 text-gray-700 block">Link</label>
+								<input type="text" id="step3_link" maxlength="60"
+									class="w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+									placeholder="https://myproject.com">
+							</div>
+							<div class="p-5">
+								<button onclick="addProject()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold border border-gray-400 rounded shadow py-2 px-4">
+									  Save
+								</button>
+							</div>							
+						<div>
+						</fieldset>
+						<div class="text-gray-600 mt-2 mb-4">
+								<table class="min-w-full table-auto">
+									<tbody class="bg-gray-200" id="step3Form">
+										<!-- List of links added (load by javascript, in the end of the page) -->
+									</tbody>
+								</table>	
+						</div>
+					</div>
+						
+				</div>
+		</div>	
+		<!-- / Step Content -->
+		
 		<!-- Bottom Navigation -->	
 		<div class="left-0 right-0 py-5 bg-white" x-show="step != 'complete'">
 			<div class="max-w-3xl mx-auto px-4">
@@ -422,8 +450,8 @@
 		// Step Two : Create link
 		function myFunction() {
 
-			var link = document.getElementById('step2_link').value;
-			var desc = document.getElementById('step2_desc').value;
+			var link = document.getElementById('title').value;
+			var desc = document.getElementById('description').value;
 			document.getElementById('step2_link').style.borderColor = "red";
 			document.getElementById('step2_desc').style.borderColor = "red";
 
@@ -462,7 +490,7 @@
 				tr.append(td1,td2);
 
 				document.getElementById('step2Form').appendChild(tr);
-			<!--  deleteButton(tr);  --> 
+			// <!--  deleteButton(tr);  --> 
 			}else{
 				if(link=="" && desc==""){
 					document.getElementById('step2_link').style.borderWidth = "2px";
@@ -478,6 +506,145 @@
 				}
 			}
 		}
+		function addProject() {
+
+			var title = document.getElementById('title').value;
+			var desc = document.getElementById('description').value;
+			// var img = document.getElementById('images').value;
+			// var videos = document.getElementById('previewVideos').value;
+			var link = document.getElementById('step3_link').value;
+			document.getElementById('title').style.borderColor = "red";
+			document.getElementById('description').style.borderColor = "red";
+			document.getElementById('step3_link').style.borderColor = "red";
+
+			if(title != "" && desc != "" && link != ""){
+				//reset in case of previous errors
+				document.getElementById('title').style.borderWidth = "0px";
+				document.getElementById('description').style.borderWidth = "0px";
+				document.getElementById('step3_link').style.borderWidth = "0px";
+				
+				var table = document.createElement('table');
+				table.style.backgroundColor = "white";
+				table.style.width = "100%";
+				table.style.borderWidth = "4px";
+				table.style.borderColor = "rgba(229, 231, 235, 1)";
+			
+				var tbody = document.createElement('tbody');
+				
+				table.appendChild(tbody)
+
+				var tr = document.createElement('TR');				
+				tr.style.backgroundColor = "white";
+				tr.style.width = "100%";
+				tr.style.borderWidth = "4px";
+				tr.style.borderColor = "rgba(229, 231, 235, 1)";
+
+				var tr1 = document.createElement('TR');
+				tr1.style.backgroundColor = "white";
+				tr1.style.width = "100%";
+				tr1.style.borderWidth = "4px";
+				tr1.style.borderColor = "rgba(229, 231, 235, 1)";
+				
+
+				document.getElementById('title').value="";
+				document.getElementById('description').value="";
+				document.getElementById('step3_link').value="";
+				document.getElementById('images').value="";
+				document.getElementById('videos').value="";
+				document.getElementById('list').innerHTML="";
+				document.getElementById('videoPreview').innerHTML="";
+
+				var td = document.createElement('TD');
+				var span = document.createElement('SPAN');
+				span.innerHTML = title 
+				td.appendChild(span);
+				
+				var td1 = document.createElement('TR');
+				var span = document.createElement('SPAN');
+				span.innerHTML = 'Description: ' + desc 
+				td1.appendChild(span);
+				
+				// var td3 = document.createElement('TR');
+				// var span = document.createElement('SPAN');
+				// span.innerHTML = img 
+				// td3.appendChild(span);
+				
+				// var td4 = document.createElement('TD');
+				// var span = document.createElement('SPAN');
+				// span.innerHTML = videos 
+				// td4.appendChild(span);
+				
+				var td2 = document.createElement('TR');
+				var span = document.createElement('SPAN');
+				span.innerHTML = 'Link: ' + link 
+				td2.appendChild(span);
+
+				var td6 = document.createElement('TD');
+				td6.style.padding =" 0.5rem 4rem";
+
+				var del = document.createElement('button');
+				del.style.backgroundColor = "99, 102, 241, 1";
+				del.style.textColor = "white";
+				del.style.padding =" 0.5rem 1rem";
+				del.style.borderWidth = "1px";
+				del.style.borderRadius = "0.375rem";
+				
+				del.innerHTML = 'Remove';
+				del.onclick = function() { deleteProject(table)}; 
+				td6.appendChild(del);
+				
+				var more = document.createElement('button');
+				more.style.backgroundColor = "99, 102, 241, 1";
+				more.style.textColor = "white";
+				more.style.padding =" 0.5rem 1rem";
+				more.style.borderWidth = "2px";
+				more.style.borderRadius = "0.375rem";
+				
+
+				tbody.append(tr, tr1)
+				
+				more.innerHTML = 'Details';
+				more.onclick = function () {tr1.append(td1, td2)};
+				td6.appendChild(more)
+
+				tr.append(td,td6);
+
+				document.getElementById('step3Form').appendChild(table);
+			
+			}else{
+				if(link=="" && desc=="" && title == ""){
+					document.getElementById('step3_link').style.borderWidth = "2px";
+					document.getElementById('title').style.borderWidth = "2px";					
+					document.getElementById('description').style.borderWidth = "2px";					
+				}
+				else if(link=="" && title == ""){
+					document.getElementById('step3_link').style.borderWidth = "2px";
+					document.getElementById('title').style.borderWidth = "2px";
+					document.getElementById('description').style.borderWidth = "0px";
+				}
+				else if(desc=="" && title == ""){
+					document.getElementById('step3_link').style.borderWidth = "0px";
+					document.getElementById('title').style.borderWidth = "2px";
+					document.getElementById('description').style.borderWidth = "2px";
+				}else if(desc=="" && link=="" ){
+					document.getElementById('step3_link').style.borderWidth = "2px";
+					document.getElementById('title').style.borderWidth = "0px";
+					document.getElementById('description').style.borderWidth = "2px";
+				}else if(title=="" ){
+					document.getElementById('step3_link').style.borderWidth = "0px";
+					document.getElementById('title').style.borderWidth = "2px";
+					document.getElementById('description').style.borderWidth = "0px";
+				}else if(desc=="" ){
+					document.getElementById('step3_link').style.borderWidth = "0px";
+					document.getElementById('title').style.borderWidth = "0px";
+					document.getElementById('description').style.borderWidth = "2px";
+				}else{
+					document.getElementById('step3_link').style.borderWidth = "2px";
+					document.getElementById('title').style.borderWidth = "0px";
+					document.getElementById('description').style.borderWidth = "0px";
+				}
+			}
+		}
 
 		function deleteButton(x) {
 			var parent = document.getElementById('step2Form');
@@ -487,4 +654,93 @@
 			document.getElementById('step2_desc').style.borderWidth = "0px";
 			document.getElementById('step2_link').style.borderWidth = "0px";
 		}
+		function deleteProject(x) {
+			var parent = document.getElementById('step3Form');
+			parent.removeChild(x);
+
+			// Remove red inputs in case of errors
+			document.getElementById('title').style.borderWidth = "0px";
+			document.getElementById('description').style.borderWidth = "0px";
+			document.getElementById('step3_link').style.borderWidth = "0px";
+		}
+
+		
+		// function previewMultiple(event){
+       	// 	var img = document.getElementById("images");
+        // 	var quantity = img.files.length;
+        // 	for(i = 0; i < quantity; i++){
+        //     	var urls = URL.createObjectURL(event.target.files[i]);
+        //     	document.getElementById("preview").innerHTML += '<img class="w-28 max-h-32" src="'+urls+'">';
+        // 	}
+    	// }
+
+
+		function deleteImage() { 
+		var index = Array.from(document.getElementById('list').children).indexOf(event.target.parentNode)
+  		document.querySelector("#list").removeChild( document.querySelectorAll('#list span')[index]);
+    	totalFiles.splice(index, 1);
+    	console.log(totalFiles)
+		}
+
+		var totalFiles = [];
+		function handleFileSelect(evt) {
+    		var files = evt.target.files; // FileList object
+
+   			 // Loop through the FileList and render image files as thumbnails.
+   			 for (var i = 0, f; f = files[i]; i++) {
+
+    		  // Only process image files.
+    		  if (!f.type.match('image.*')) {
+     		   continue;
+    		  }
+      
+     	 	totalFiles.push(f)
+
+     		var reader = new FileReader();
+
+     		 // Closure to capture the file information.
+     		reader.onload = (function(theFile) {
+       		 return function(e) {
+       		   // Render thumbnail.
+       		   var span = document.createElement('span');
+			   span.style.position = 'relative';
+			   span.style.minHeight = '25px';
+        	   span.innerHTML = ["<button class='absolute top-0 right-0 z-10 text-red-700 bg-white text-bold px-0.5 h-8 rounded-tl-lg rounded-bl-lg' onclick='deleteImage()'>x</button>", '<img width=100 height=150 class="thumb relative" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+
+         		document.getElementById('list').insertBefore(span, null);
+       		 };
+      		})(f);
+
+    		  // Read in the image file as a data URL.
+      		reader.readAsDataURL(f);
+   			 }
+  		} 
+
+  		document.getElementById('images').addEventListener('change', handleFileSelect, false);
+
+
+		function previewVideo(event) {
+   			var files = event.target.files;
+    		for (var i = 0; i < files.length; i++) {
+      			var f = files[i];
+      			// Only process video files.
+      			if (!f.type.match('video.*')) {
+        			continue;
+      			}
+
+	  			var vid = document.getElementById("videoPreview")
+
+      			var source = document.createElement('video'); //added now
+
+      			source.width = 280;
+      			source.height = 240;
+      			source.controls = true;
+     			 source.src = URL.createObjectURL(files[i]);
+
+      			vid.appendChild(source); // append `<video>` element
+
+   			}
+ 		}
+
 </script>
