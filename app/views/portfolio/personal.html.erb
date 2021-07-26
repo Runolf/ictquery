@@ -510,8 +510,8 @@
 
 			var title = document.getElementById('title').value;
 			var desc = document.getElementById('description').value;
-			// var img = document.getElementById('images').value;
-			// var videos = document.getElementById('previewVideos').value;
+			var img = document.getElementById('preImg').src;
+			var videos = document.getElementById('vid').src;
 			var link = document.getElementById('step3_link').value;
 			document.getElementById('title').style.borderColor = "red";
 			document.getElementById('description').style.borderColor = "red";
@@ -530,20 +530,19 @@
 				table.style.borderColor = "rgba(229, 231, 235, 1)";
 			
 				var tbody = document.createElement('tbody');
+				tbody.style.borderWidth = "4px";
+				tbody.style.borderColor = "rgba(229, 231, 235, 1)";
 				
 				table.appendChild(tbody)
 
 				var tr = document.createElement('TR');				
 				tr.style.backgroundColor = "white";
 				tr.style.width = "100%";
-				tr.style.borderWidth = "4px";
-				tr.style.borderColor = "rgba(229, 231, 235, 1)";
 
 				var tr1 = document.createElement('TR');
 				tr1.style.backgroundColor = "white";
 				tr1.style.width = "100%";
-				tr1.style.borderWidth = "4px";
-				tr1.style.borderColor = "rgba(229, 231, 235, 1)";
+				tr1.style.display = "none";
 				
 
 				document.getElementById('title').value="";
@@ -563,16 +562,22 @@
 				var span = document.createElement('SPAN');
 				span.innerHTML = 'Description: ' + desc 
 				td1.appendChild(span);
+								
+				var td3 = document.createElement('TR');				
+				var image = document.createElement('IMG');						
+				image.src = img 
+				image.alt = ""
+				image.style.height= "130px"
+				image.style.width= "140px"		
+				td3.appendChild(image);
 				
-				// var td3 = document.createElement('TR');
-				// var span = document.createElement('SPAN');
-				// span.innerHTML = img 
-				// td3.appendChild(span);
-				
-				// var td4 = document.createElement('TD');
-				// var span = document.createElement('SPAN');
-				// span.innerHTML = videos 
-				// td4.appendChild(span);
+				var td4 = document.createElement('TR');
+				var video = document.createElement('video');
+				video.src = videos 
+				video.width = 280;
+				video.height = 240;
+				video.controls = true;
+				td4.appendChild(video);
 				
 				var td2 = document.createElement('TR');
 				var span = document.createElement('SPAN');
@@ -602,13 +607,29 @@
 				
 
 				tbody.append(tr, tr1)
+				tr.append(td,td6);
+				tr1.append(td1, td2)		
+				if (!img){
+					null
+				}else{
+					tr1.append(td3)	
+				}		
+				if (!videos){
+					null
+				}else{
+					tr1.append(td4)	
+				}		
 				
 				more.innerHTML = 'Details';
-				more.onclick = function () {tr1.append(td1, td2)};
-				td6.appendChild(more)
+				more.onclick = function () {
+					if (tr1.style.display === "none") {
+    				tr1.style.display = "block";
+  					} else {
+   					tr1.style.display = "none";
+					}};
 
-				tr.append(td,td6);
 
+				td6.appendChild(more)				
 				document.getElementById('step3Form').appendChild(table);
 			
 			}else{
@@ -705,7 +726,7 @@
        		   var span = document.createElement('span');
 			   span.style.position = 'relative';
 			   span.style.minHeight = '25px';
-        	   span.innerHTML = ["<button class='absolute top-0 right-0 z-10 text-red-700 bg-white text-bold px-0.5 h-8 rounded-tl-lg rounded-bl-lg' onclick='deleteImage()'>x</button>", '<img width=100 height=150 class="thumb relative" src="', e.target.result,
+        	   span.innerHTML = ["<button class='absolute top-0 right-0 z-10 text-red-700 bg-white text-bold px-0.5 h-8 rounded-tl-lg rounded-bl-lg' onclick='deleteImage()'>x</button>", '<img id="preImg" width=100 height=150 class="thumb relative" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
 
          		document.getElementById('list').insertBefore(span, null);
@@ -736,6 +757,7 @@
       			source.width = 280;
       			source.height = 240;
       			source.controls = true;
+				source.id="vid"
      			 source.src = URL.createObjectURL(files[i]);
 
       			vid.appendChild(source); // append `<video>` element
