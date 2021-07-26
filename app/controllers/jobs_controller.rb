@@ -14,6 +14,15 @@ class JobsController < ApplicationController
 
     def show
         @job = Job.find(params[:id])
+        # entreprise
+        @entreprise = Entreprise.find(@job.entreprises_id)
+        # adresse
+        # @adresse = Adress.find(@job.adresses_id)
+        # experience
+        #@experiences = Exprerience.find(@job.experiences_id)
+        # contract type
+        # @contractType = ContractType.find(@job.contractTypes_id) 
+
     end
 
     def create

@@ -1,5 +1,16 @@
-<h1><%= @job.name %></h1>
+<dl class="w-full bg-teal-700">
+    <dd class="text-teal-400"><%= @job.name %></dd> <button type="submit" class="w-100">Apply</button>
+    <dd class="text-teal-200">Location: todo</dd> 
+    <dd class="text-teal-200">Entreprise: todo</dd> 
+    <dd class="text-teal-200">Contract type: todo</dd>
+    <% unless @job.dateAdded.nil? %>
+        <dd class="text-teal-200">Date added: <%= @job.dateAdded %></dd>
+    <% end %>
+</dl>
 
-<p><%= @job.description %></p>
-<p><%= @job.expectations %></p>
-<p><%= @job.dateAdded %></p>
+<div>
+    <h2>Job description</h2>
+    <p><%= @job.description %></p>
+    <h2>Job expectations</h2>
+    <p><%= @job.expectations %></p>
+</div>

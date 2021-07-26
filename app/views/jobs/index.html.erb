@@ -1,7 +1,9 @@
-<div class="text-base font-medium text-lime-600 py-2 px-4 rounded">
+<div class="text-base font-medium text-teal-600 py-2 px-4 rounded">
     <h1 class='font-black text-6xl text-center'>Entreprises</h1>
 </div>
 <!--
+    Using ransack gem for the filter. 
+
     Filtre:
         * Code postal
         * Max distance
@@ -22,13 +24,13 @@
 <br/> <br/>
 <h1>Ancient code</h1>
    <% @entreprises.each do |ent| %>
-    <div class="bg-lime-600 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
+    <div class="bg-teal-700 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
             <p class="font-black text-2xl text-center"> <%= ent.name %> </p>
             <% @jobs.each do |job| %>
 				<% if job.entreprises_id == ent.id %>
                     <div  class="flex justify-around flex-wrap font-black text-1xl text-center"> 
-                        <a class="bg-lime-400 py-2 px-4 border border-transparent 
-                        rounded-md text-base font-medium text-white hover:bg-lime-300" 
+                        <a class="bg-teal-400 py-2 px-4 border border-transparent 
+                        rounded-md text-base font-medium text-white hover:bg-teal-300" 
                         href="<%= job_path(job.id)%>">
                             <%= job.name %>
                         </a>

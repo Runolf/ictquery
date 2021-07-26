@@ -1,8 +1,25 @@
-#Entreprise.create(name: 'Aubay', about: 'Aubay Entreprise', contactMail: 'aubay@info.be', contactPhone: '+32 493 471 456')
-Job.create(name: 'Java backend developper', expectations: 'JAVA 8, Junit 4, Thymleaf', description: 'Create the new Facebook', entreprises_id: 1)
-Job.create(name: 'React developper', expectations: 'Using React for 8years minimum', description: 'Create the new Facebook', entreprises_id: 1)
+#Adresse Aubay
+Adress.create(street: "Rue Louis Pasteur", city: "Boulogne Billancourt", postalCode: "92100", country: "France", houseNumber: "13", googleMapUrl: "https://goo.gl/maps/LbHYM3Zi9Y5xCUR87")
+#Adresse Qiwie
+Adress.create(street: "Bd Saint-Lazare", city: "Saint-Josse-ten-Noode, Bruxelles", postalCode: "1210", country: "Belgium", houseNumber: "4/10", googleMapUrl: "https://goo.gl/maps/LJqu5wZUwr8s1J9r8")
 
-#Entreprise.create(name: 'Qiwie', about: 'Qiwie marketing', contactMail: 'qiwie@info.be', contactPhone: '+32 3 613 09 44')
-#Job.create(name: 'PHP', expectations: 'Laravel, Senior', description: 'Netflix but better', entreprises_id: 2)
-#Job.create(name: 'Angular developper', expectations: 'Using Angular for 4years minimum', description: 'Netflix but better', entreprises_id: 2)
+ContractType.create(name: "full time")
+ContractType.create(name: "Part time")
+ContractType.create(name: "Half time")
 
+Experience.create(name: "React")
+Experience.create(name: "Angular")
+Experience.create(name: "Ruby")
+Experience.create(name: "Java")
+Experience.create(name: ".NET")
+Experience.create(name: "PHP")
+Experience.create(name: "Javascript")
+Experience.create(name: "Typescript")
+
+Entreprise.create(name: 'Aubay', about: 'Aubay Entreprise', contactMail: 'aubay@info.be', contactPhone: '+32 493 471 456')
+Job.create(name: 'Java senior backend developper', expectations: 'JAVA 8, Junit 4, Thymleaf', description: 'Create the new Facebook', entreprises_id: 1, adresses_id: 1, contractTypes_id: 1, experiences_id: 4)
+Job.create(name: 'React junior developper', expectations: 'Using React for 8years minimum', description: 'Create the new Facebook', entreprises_id: 1,  adresses_id: 1, contractTypes_id: 1, experiences_id: 1)
+
+Entreprise.create(name: 'Qiwie', about: 'Qiwie marketing', contactMail: 'qiwie@info.be', contactPhone: '+32 3 613 09 44')
+Job.create(name: 'PHP senior developper', expectations: 'Laravel, Senior', description: 'Netflix but better', entreprises_id: 2,  adresses_id: 2, contractTypes_id: 1, experiences_id: 6)
+Job.create(name: 'Angular medior developper', expectations: 'Using Angular for 4 years minimum', description: 'Netflix but better', entreprises_id: 2,  adresses_id: 2, contractTypes_id: 1, experiences_id: 2)
