@@ -18,24 +18,14 @@
 -->
 
 <% @jobs.each do |job|%>
-    <p> <%= job.name %></p>
-<% end %>
-
-<br/> <br/>
-<h1>Ancient code</h1>
-   <% @entreprises.each do |ent| %>
     <div class="bg-teal-700 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
-            <p class="font-black text-2xl text-center"> <%= ent.name %> </p>
-            <% @jobs.each do |job| %>
-				<% if job.entreprises_id == ent.id %>
-                    <div  class="flex justify-around flex-wrap font-black text-1xl text-center"> 
-                        <a class="bg-teal-400 py-2 px-4 border border-transparent 
-                        rounded-md text-base font-medium text-white hover:bg-teal-300" 
-                        href="<%= job_path(job.id)%>">
-                            <%= job.name %>
-                        </a>
-                    </div>
-				<% end %>
-            <% end %>
+        <p class="font-black text-2xl text-center"> <%= job.entreprise.name %></p>
+        <div  class="flex justify-around flex-wrap font-black text-1xl text-center"> 
+            <a class="bg-teal-400 py-2 px-4 border border-transparent 
+            rounded-md text-base font-medium text-white hover:bg-teal-300" 
+            href="<%= job_path(job.id)%>">
+             <%= job.name %>
+            </a>
         </div>
-    <% end %>
+    </div>
+<% end %>

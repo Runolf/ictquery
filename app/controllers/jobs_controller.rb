@@ -5,8 +5,10 @@ class JobsController < ApplicationController
 
        @q = Job.ransack(params[:q])
        @jobs = @q.result
-       .joins("join entreprises on jobs.entreprises_id = entreprises.id")
-       
+       .joins(:entreprise)
+
+     #"join entreprises on jobs.entreprise_id = entreprise.id"
+
       @qEnter = Entreprise.ransack(params[:qEnter])
       @entreprises = @qEnter.result    
 
@@ -15,11 +17,11 @@ class JobsController < ApplicationController
     def show
         @job = Job.find(params[:id])
         # entreprise
-        @entreprise = Entreprise.find(@job.entreprises_id)
+        @entreprise = Entreprise.find(@job.entreprise_id)
         # adresse
-        # @adresse = Adress.find(@job.adresses_id)
+        @adresse = Adress.find(@job.adresse_id)
         # experience
-        #@experiences = Exprerience.find(@job.experiences_id)
+        @experiences = Experience.find(@job.experience_id)
         # contract type
         # @contractType = ContractType.find(@job.contractTypes_id) 
 
