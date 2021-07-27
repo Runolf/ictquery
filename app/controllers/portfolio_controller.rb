@@ -21,5 +21,17 @@ class PortfolioController < ApplicationController
       "Initiative"]
       @user = current_user
       @age = ((Time.zone.now - @user.birthdate.to_time) / 1.year.seconds).floor
+      # @portfolios = Portfolio.new
     end
+
+    def show
+
+    end
+
+    def new
+    end
+
+    def create
+    end
+
   end
