@@ -16,8 +16,16 @@
   </head>
 
   <body>
-	<%= render 'layouts/navbar' %>
-    <%= yield %>
-	<%= render 'layouts/footer' %>
+    <div class="flex flex-col min-h-screen">
+      <div>
+	    <%= render 'layouts/navbar' %>
+      </div>
+      <div class="flex-grow">
+      <%= yield %>
+      </div>
+      <div>
+      <%= render 'layouts/footer' %>
+      </div>
+    </div>
   </body>
 </html>
