@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_27_111652) do
+ActiveRecord::Schema.define(version: 2021_07_30_122941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_111652) do
     t.string "googleMapUrl"
   end
 
-  create_table "contractTypes", force: :cascade do |t|
+  create_table "contracttypes", force: :cascade do |t|
     t.string "name"
   end
 
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2021_07_27_111652) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "entrepriseAdresses", force: :cascade do |t|
+  create_table "entrepriseadresses", force: :cascade do |t|
     t.bigint "entreprise_id"
     t.bigint "adresse_id"
-    t.index ["adresse_id"], name: "index_entrepriseAdresses_on_adresse_id"
-    t.index ["entreprise_id"], name: "index_entrepriseAdresses_on_entreprise_id"
+    t.index ["adresse_id"], name: "index_entrepriseadresses_on_adresse_id"
+    t.index ["entreprise_id"], name: "index_entrepriseadresses_on_entreprise_id"
   end
 
   create_table "entreprises", force: :cascade do |t|
@@ -52,35 +52,28 @@ ActiveRecord::Schema.define(version: 2021_07_27_111652) do
     t.string "name"
   end
 
-  create_table "favouriteEntreprises", force: :cascade do |t|
+  create_table "favouriteentreprises", force: :cascade do |t|
     t.datetime "dateAdded"
     t.bigint "user_id"
     t.bigint "entreprise_id"
-    t.index ["entreprise_id"], name: "index_favouriteEntreprises_on_entreprise_id"
-    t.index ["user_id"], name: "index_favouriteEntreprises_on_user_id"
+    t.index ["entreprise_id"], name: "index_favouriteentreprises_on_entreprise_id"
+    t.index ["user_id"], name: "index_favouriteentreprises_on_user_id"
   end
 
-  create_table "favouriteJobs", force: :cascade do |t|
+  create_table "favouritejobs", force: :cascade do |t|
     t.datetime "dateAdded"
     t.bigint "job_id"
     t.bigint "user_id"
-    t.index ["job_id"], name: "index_favouriteJobs_on_job_id"
-    t.index ["user_id"], name: "index_favouriteJobs_on_user_id"
+    t.index ["job_id"], name: "index_favouritejobs_on_job_id"
+    t.index ["user_id"], name: "index_favouritejobs_on_user_id"
   end
 
-  create_table "jobApplieds", force: :cascade do |t|
+  create_table "jobapplieds", force: :cascade do |t|
     t.datetime "dateAdded"
     t.bigint "job_id"
     t.bigint "user_id"
-    t.index ["job_id"], name: "index_jobApplieds_on_job_id"
-    t.index ["user_id"], name: "index_jobApplieds_on_user_id"
-  end
-
-  create_table "jobSectors", force: :cascade do |t|
-    t.bigint "sector_id"
-    t.bigint "job_id"
-    t.index ["job_id"], name: "index_jobSectors_on_job_id"
-    t.index ["sector_id"], name: "index_jobSectors_on_sector_id"
+    t.index ["job_id"], name: "index_jobapplieds_on_job_id"
+    t.index ["user_id"], name: "index_jobapplieds_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -98,15 +91,22 @@ ActiveRecord::Schema.define(version: 2021_07_27_111652) do
     t.index ["experience_id"], name: "index_jobs_on_experience_id"
   end
 
+  create_table "jobsectors", force: :cascade do |t|
+    t.bigint "sector_id"
+    t.bigint "job_id"
+    t.index ["job_id"], name: "index_jobsectors_on_job_id"
+    t.index ["sector_id"], name: "index_jobsectors_on_sector_id"
+  end
+
   create_table "sectors", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "socialContacts", force: :cascade do |t|
+  create_table "socialcontacts", force: :cascade do |t|
     t.string "name"
     t.string "profilLink"
     t.bigint "entreprise_id"
-    t.index ["entreprise_id"], name: "index_socialContacts_on_entreprise_id"
+    t.index ["entreprise_id"], name: "index_socialcontacts_on_entreprise_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -126,20 +126,20 @@ ActiveRecord::Schema.define(version: 2021_07_27_111652) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "entrepriseAdresses", "adresses", column: "adresse_id"
-  add_foreign_key "entrepriseAdresses", "entreprises"
-  add_foreign_key "favouriteEntreprises", "entreprises"
-  add_foreign_key "favouriteEntreprises", "users"
-  add_foreign_key "favouriteJobs", "jobs"
-  add_foreign_key "favouriteJobs", "users"
-  add_foreign_key "jobApplieds", "jobs"
-  add_foreign_key "jobApplieds", "users"
-  add_foreign_key "jobSectors", "jobs"
-  add_foreign_key "jobSectors", "sectors"
-  add_foreign_key "jobs", "\"contractTypes\"", column: "contractType_id"
+  add_foreign_key "entrepriseadresses", "adresses", column: "adresse_id"
+  add_foreign_key "entrepriseadresses", "entreprises"
+  add_foreign_key "favouriteentreprises", "entreprises"
+  add_foreign_key "favouriteentreprises", "users"
+  add_foreign_key "favouritejobs", "jobs"
+  add_foreign_key "favouritejobs", "users"
+  add_foreign_key "jobapplieds", "jobs"
+  add_foreign_key "jobapplieds", "users"
   add_foreign_key "jobs", "adresses", column: "adresse_id"
+  add_foreign_key "jobs", "contracttypes", column: "contractType_id"
   add_foreign_key "jobs", "entreprises"
   add_foreign_key "jobs", "experiences"
-  add_foreign_key "socialContacts", "entreprises"
+  add_foreign_key "jobsectors", "jobs"
+  add_foreign_key "jobsectors", "sectors"
+  add_foreign_key "socialcontacts", "entreprises"
   add_foreign_key "users", "adresses", column: "adresse_id"
 end
