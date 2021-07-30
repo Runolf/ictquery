@@ -9,23 +9,45 @@
         * Max distance
     Experience
         Junior, Medior, Senior
-    School level
-        Bachelor, Master
     Type de contrat
         Partiel time, half time, full time
-    Categorie
+    Technologies
         Javascript, Python, Ruby, C#, Java, ...
 -->
+<aside class="float-left w-60 p-8 bg-teal-700">
+   <%= search_form_for @q do |j|%>
+        <h4 class="text-2xl text-teal-200">Filtre</h4>
+        <div class="text-lg text-teal-400">
+            <%= j.label :adresse_city_cont, 'Code postal' %>
+            <%= j.search_field :adresse_city_cont %>
+        
+
+            <%= j.label :entreprise_name_cont, 'Entreprise?'%>
+            <%= j.search_field :entreprise_name_cont %>
+
+            <%= j.label :experience_id_eq, 'Experience' %>
+            <%= j.collection_select :experience_id_eq, Experience.all, :id, :name, include_blank: true %>
+
+            <%= j.label :name_cont, 'Technology?' %>
+            <%= j.search_field :name_cont %>
+        </div>
+        
+        <div class="bg-teal-900 py-2 px-4 rounded-md hover:bg-teal-400"><%=j.submit %></div>
+    <% end %>
+</aside>
+
 
 <% @jobs.each do |job|%>
     <div class="bg-teal-700 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
         <p class="font-black text-2xl text-center"> <%= job.entreprise.name %></p>
         <div  class="flex justify-around flex-wrap font-black text-1xl text-center"> 
             <a class="bg-teal-400 py-2 px-4 border border-transparent 
-            rounded-md text-base font-medium text-white hover:bg-teal-300" 
+            rounded-md text-base font-medium text-white hover:bg-teal-300 mb-6" 
             href="<%= job_path(job.id)%>">
              <%= job.name %>
             </a>
         </div>
     </div>
 <% end %>
+
+

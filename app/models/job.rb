@@ -1,6 +1,7 @@
 class Job < ActiveRecord::Base	
     belongs_to :entreprise
     belongs_to :experience
+    belongs_to :adresse
 
 
     def self.search(search)

@@ -6,11 +6,9 @@ class JobsController < ApplicationController
        @q = Job.ransack(params[:q])
        @jobs = @q.result
        .joins(:entreprise)
-
-     #"join entreprises on jobs.entreprise_id = entreprise.id"
-
-      @qEnter = Entreprise.ransack(params[:qEnter])
-      @entreprises = @qEnter.result    
+       .joins(:adresse)
+       .joins(:experience)
+       #the search on experience worked even without adding the joins here ...
 
     end
 
@@ -19,7 +17,7 @@ class JobsController < ApplicationController
         # entreprise
         @entreprise = Entreprise.find(@job.entreprise_id)
         # adresse
-        @adresse = Adress.find(@job.adresse_id)
+        @adresse = Adresse.find(@job.adresse_id)
         # experience
         @experiences = Experience.find(@job.experience_id)
         # contract type
