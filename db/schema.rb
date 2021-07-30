@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_30_122941) do
+ActiveRecord::Schema.define(version: 2021_07_30_131842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,9 +84,9 @@ ActiveRecord::Schema.define(version: 2021_07_30_122941) do
     t.bigint "entreprise_id"
     t.bigint "adresse_id"
     t.bigint "experience_id"
-    t.bigint "contractType_id"
+    t.bigint "contracttype_id"
     t.index ["adresse_id"], name: "index_jobs_on_adresse_id"
-    t.index ["contractType_id"], name: "index_jobs_on_contractType_id"
+    t.index ["contracttype_id"], name: "index_jobs_on_contracttype_id"
     t.index ["entreprise_id"], name: "index_jobs_on_entreprise_id"
     t.index ["experience_id"], name: "index_jobs_on_experience_id"
   end
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 2021_07_30_122941) do
   add_foreign_key "jobapplieds", "jobs"
   add_foreign_key "jobapplieds", "users"
   add_foreign_key "jobs", "adresses", column: "adresse_id"
-  add_foreign_key "jobs", "contracttypes", column: "contractType_id"
+  add_foreign_key "jobs", "contracttypes"
   add_foreign_key "jobs", "entreprises"
   add_foreign_key "jobs", "experiences"
   add_foreign_key "jobsectors", "jobs"
