@@ -8,6 +8,7 @@ class JobsController < ApplicationController
        .joins(:entreprise)
        .joins(:adresse)
        .joins(:experience)
+       .joins(:contractType)
        #the search on experience worked even without adding the joins here ...
 
     end
