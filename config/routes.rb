@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
   get '/jobs', to: 'jobs#index'
 
-  get '/portfolio', to: 'portfolio#personal'
+  get '/portfolios', to: 'portfolios#index'
 
   root to: "static#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   resources :searches
   resources :entreprises
   # resources :portfolios
+  resources :portfolios
 
 end

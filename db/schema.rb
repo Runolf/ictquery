@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_30_131842) do
+ActiveRecord::Schema.define(version: 2021_08_02_110657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,27 @@ ActiveRecord::Schema.define(version: 2021_07_30_131842) do
     t.bigint "job_id"
     t.index ["job_id"], name: "index_jobsectors_on_job_id"
     t.index ["sector_id"], name: "index_jobsectors_on_sector_id"
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string "image"
+    t.string "firstname"
+    t.string "lastname"
+    t.integer "age"
+    t.string "email"
+    t.string "telephone"
+    t.text "about"
+    t.string "strength"
+    t.string "skill"
+    t.string "link"
+    t.string "linkdescription"
+    t.string "project"
+    t.string "title"
+    t.string "description"
+    t.string "projectimage"
+    t.string "projectvideo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sectors", force: :cascade do |t|
