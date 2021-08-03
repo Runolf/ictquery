@@ -21,7 +21,7 @@ class JobsController < ApplicationController
         # experience
         @experiences = Experience.find(@job.experience_id)
         # contract type
-        # @contractType = ContractType.find(@job.contractTypes_id) 
+        @contractType = Contracttype.find(@job.contracttype_id) 
 
     end
 
@@ -38,4 +38,12 @@ class JobsController < ApplicationController
         job = Job.find(params[:id])
         job.destroy
     end
+
+    def apply
+        job = Job.find(params[:id])
+        user = current_user
+
+        jobappied = Jobapplied.create(date, job.id, user.id)
+        jobappied.save
+    end 
 end

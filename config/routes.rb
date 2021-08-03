@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :jobs 
   resources :searches
+  resources :entreprises
   # resources :portfolios
 
 end

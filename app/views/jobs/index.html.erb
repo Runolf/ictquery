@@ -5,31 +5,32 @@
     Using ransack gem for the filter. 
 
     Filtre:
-        * Code postal
+        * Code postal                                   DONE
         * Max distance
     Entreprise
         Qiwie, Aubay ....                               DONE   
     Experience
         Junior, Medior, Senior                          DONE
     Type de contrat
-        Partiel time, half time, full time
+        Partiel time, half time, full time              DONE
     Technologies
         Javascript, Python, Ruby, C#, Java, ...         DONE
 -->
-<aside class="float-left w-60 p-8 bg-teal-700">
+<aside class="float-left w-60 p-8 bg-teal-700 m-1">
    <%= search_form_for @q do |j|%>
         <h4 class="text-2xl text-teal-200">Filtre</h4>
         <div class="text-lg text-teal-400">
-            <%= j.label :adresse_city_cont, 'Code postal' %>
-            <%= j.search_field :adresse_city_cont %>
+            <%= j.label :adresse_postalCode_cont, 'Code postal' %>
+            <%= j.search_field :adresse_postalCode_cont %>
 
             <%= j.label :contracttype_name_cont, 'Contract type?'%>
-            <%= j.search_field :contracttype_name_cont %>
+             <%= j.collection_select :contracttype_id_eq, Contracttype.all, :id, :name, include_blank: true %>
 
             <%= j.label :entreprise_name_cont, 'Entreprise?'%>
             <%= j.search_field :entreprise_name_cont %>
 
             <%= j.label :experience_id_eq, 'Experience' %>
+            <br/>
             <%= j.collection_select :experience_id_eq, Experience.all, :id, :name, include_blank: true %>
 
             <%= j.label :name_cont, 'Technology?' %>
