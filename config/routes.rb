@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/about', to: 'static#about'
   
   get '/jobs', to: 'jobs#index'
+  
+
+  post "/apply", to: "jobs#apply"
+  
 
   get '/portfolios', to: 'portfolios#index'
 

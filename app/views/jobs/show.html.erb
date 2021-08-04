@@ -1,8 +1,10 @@
 <div class="mx-16">
     <dl class="text-left w-full bg-teal-700">
-        <dd class="text-center text-2xl font-semibold text-teal-400"><%= @job.name %></dd> 
-        <button class="float-right mr-2 bg-teal-400 py-2 px-4 border border-transparent 
-                rounded-md text-base font-medium text-white hover:bg-teal-300" type="submit" class="w-100">Apply</button>
+        <dd class="text-center text-2xl font-semibold text-teal-400"><%= @job.name %></dd>  
+        <% if current_user %>
+            <dd><%= button_to 'Apply', :action => "apply", id: @job.id, data: { confirm: "Aplly ?" } %></dd>
+                                                                             <!--confirm is not working ... -->                               
+        <% end %>
         <dd class="text-teal-200 pl-4">Location: <%= @adresse.street + ", " + @adresse.city + ", " + @adresse.country %></dd> 
         <dd class="text-teal-200 pl-4">Entreprise: <%= @entreprise.name %></dd> 
         <dd class="text-teal-200 pl-4">Contract type: <%= @contractType.name %></dd>

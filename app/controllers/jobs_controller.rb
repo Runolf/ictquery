@@ -43,7 +43,13 @@ class JobsController < ApplicationController
         job = Job.find(params[:id])
         user = current_user
 
-        jobappied = Jobapplied.create(date, job.id, user.id)
-        jobappied.save
+        #puts job.name
+        #puts user.username
+        jobapplied = Jobapplied.create(
+            dateAdded: DateTime.now, 
+            job_id: job.id, 
+            user_id: user.id)
+        #puts jobapplied.job_id
+        #jobapplied.save
     end 
 end
