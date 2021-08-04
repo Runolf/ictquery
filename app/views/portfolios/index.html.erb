@@ -2,14 +2,38 @@
 
 <h1></h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Telephone</th>
+      <th>image</th>
+      <th>About</th>
+      <th>Strengths</th>
+      <th>skills</th>
+      <th>lastname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-
-
+  <tbody>
     <% @portfolios.each do |portfolio| %>
-      
-        <h1><%= link_to 'Edit Portfolio', edit_portfolio_path(portfolio) %></td>
-  
+      <tr>
+        <td><%= portfolio.telephone %></td>
+        <% if portfolio.image.attached? %>
+        <td><%= image_tag portfolio.image, style: "width: 100px; display: block" %></td>
+        <% end %>
+        <td><%= portfolio.about %></td>
+        <td><%= portfolio.strength %></td>
+        <td><% portfolio.skill %></td>
+        <td><%= portfolio.lastname %></td>
+        <td><%= link_to 'Show', portfolio %></td>
+        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
+        <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
+  </tbody>
+</table>
 
 <br>
 
+<%= link_to 'New Portfolio', new_portfolio_path %>
