@@ -13,11 +13,30 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/new
   def new
     @portfolio = Portfolio.new
+    @strengths = ["Communication",
+      "Strong work ethic/diligent",
+      "Organizational and planning skills",
+      "Flexible and adaptable",
+      "Decision-making and judgment",
+      "Problem solving",
+      "Gathering, analyzing and managing information",
+      "Coaching and mentoring",
+      "Team work",
+      "Reliable and dependable",
+      "Self reliant and self management",
+      "Self discipline",
+      "Persistent and resilient",
+      "Persuasive",
+      "Integrity",
+      "Energetic",
+      "Initiative"]
+      @user = current_user
+      @age = ((Time.zone.now - @user.birthdate.to_time) / 1.year.seconds).floor
   end
 
   # GET /portfolios/1/edit
   def edit
-    @strength = ["Communication",
+    @strengths = ["Communication",
       "Strong work ethic/diligent",
       "Organizational and planning skills",
       "Flexible and adaptable",
@@ -39,8 +58,8 @@ class PortfoliosController < ApplicationController
   end
 
   # POST /portfolios or /portfolios.json
-  def create
-    @portfolio = Portfolio.new(portfolio_params)
+  def create  
+    @portfolio = Portfolio.create(portfolio_params)
 
     respond_to do |format|
       if @portfolio.save
@@ -83,6 +102,6 @@ class PortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def portfolio_params
-      params.require(:portfolio).permit(:image, :firstname, :lastname, :email, :telephone, :about, :strength, :skill, :link, :linkdescription, :project, :title, :description, :projectimage, :projectvideo)
+      params.require(:portfolio).permit(:image, :firstname, :lastname, :email, :telephone, :about, :link, :linkdescription, :project, :title, :description, :projectimage, :projectvideo, strength:[], skill:[])
     end
 end
