@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
 
   post "/apply", to: "jobs#apply"
+  post "/likeCompany", to: "jobs#likeCompany"
   
 
   get '/portfolios', to: 'portfolios#index'

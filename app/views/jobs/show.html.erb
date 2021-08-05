@@ -2,8 +2,7 @@
     <dl class="text-left w-full bg-teal-700">
         <dd class="text-center text-2xl font-semibold text-teal-400"><%= @job.name %></dd>  
         <% if current_user %>
-            <dd><%= button_to 'Apply', :action => "apply", id: @job.id, data: { confirm: "Aplly ?" } %></dd>
-                                                                             <!--confirm is not working ... -->                               
+            <dd><%= button_to 'Apply', :action => "apply", id: @job.id, class: "" %></dd>                           
         <% end %>
         <dd class="text-teal-200 pl-4">Location: <%= @adresse.street + ", " + @adresse.city + ", " + @adresse.country %></dd> 
         <dd class="text-teal-200 pl-4">Entreprise: <%= @entreprise.name %></dd> 
@@ -12,6 +11,8 @@
         <% unless @job.dateAdded.nil? %>
             <dd class="text-teal-200 pl-4">Date added: <%= @job.dateAdded %></dd>
         <% end %>
+
+        <dd><%= button_to 'Like', :action => "likeCompany", id: @job.id, :class => ""%></dd>
     </dl>
 
     <div>
