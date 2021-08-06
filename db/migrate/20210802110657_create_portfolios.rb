@@ -1,3 +1,4 @@
+
 class CreatePortfolios < ActiveRecord::Migration[6.1]
   def change
     create_table :portfolios do |t|
@@ -22,3 +23,4 @@ class CreatePortfolios < ActiveRecord::Migration[6.1]
     end
   end
 end
+
