@@ -24,7 +24,9 @@
         <% end %>
         <td><%= portfolio.about %></td>
         <td><%= portfolio.strength %></td>
-        <td><% portfolio.skill %></td>
+        <% if portfolio.skill %>
+        <td><%= portfolio.skill[0] %></td>
+        <% end %>
         <td><%= portfolio.lastname %></td>
         <td><%= link_to 'Show', portfolio %></td>
         <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
