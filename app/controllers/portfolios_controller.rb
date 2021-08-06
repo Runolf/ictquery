@@ -1,4 +1,3 @@
-
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: %i[ show edit update destroy ]
 
@@ -61,11 +60,12 @@ class PortfoliosController < ApplicationController
   # POST /portfolios or /portfolios.json
   def create  
     @portfolio = Portfolio.create(portfolio_params)
+    @strengths = @portfolio.strength
 
     respond_to do |format|
       if @portfolio.save
         format.html { redirect_to @portfolio, notice: "Portfolio was successfully created." }
-        format.json { render :show, status: :created, location: @portfolio }
+        format.json { render :new, status: :created, location: @portfolio }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @portfolio.errors, status: :unprocessable_entity }
@@ -103,7 +103,6 @@ class PortfoliosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def portfolio_params
-      params.require(:portfolio).permit(:image, :firstname, :lastname, :email, :telephone, :about, :link, :linkdescription, :project, :title, :description, :projectimage, :projectvideo, strength:[], skill:[])
+      params.require(:portfolio).permit(:image, :firstname, :lastname, :email, :skill, :telephone, :about, :link, :linkdescription, :project, :title, :description, :projectimage, :projectvideo, strength:[])
     end
 end
-
