@@ -9,7 +9,7 @@ class CreatePortfolios < ActiveRecord::Migration[6.1]
       t.string :email
       t.string :telephone
       t.text :about
-      t.string :strength
+      t.string :strength, array: true, default: "[]"
       t.string :skill
       t.string :link
       t.string :linkdescription
@@ -20,6 +20,7 @@ class CreatePortfolios < ActiveRecord::Migration[6.1]
       t.string :projectvideo
 
       t.timestamps
+      
     end
   end
 end

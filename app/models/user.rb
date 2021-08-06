@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
   has_one_attached :image
   has_one_attached :portfolios
+  has_one_attached :personallinks
 
   validates :username, presence: true, uniqueness: {case_sensitive: false}, format: {with: /\A[a-zA-Z0-9 _\.]*\z/}
   validates :birthdate, presence: true
