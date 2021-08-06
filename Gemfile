@@ -22,7 +22,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#gem for the search and sort tool ( see the code in jobs controller and view)
 gem 'ransack'
+
+# gem to add some icons ( images are free to use )
+gem "font-awesome-rails"
 
 # Use Active Storage variant
 gem 'carrierwave', '~> 2.0'

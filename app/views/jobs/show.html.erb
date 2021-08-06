@@ -14,12 +14,13 @@
 
         <dd><%= button_to 'Like', :action => "likeCompany", id: @job.id, :class => ""%></dd>
     </dl>
-
+    
     <div>
         <h2 class="text-xl font-medium text-teal-400">Job description</h2>
         <p><%= @job.description %></p>
         <h2 class="text-xl font-medium text-teal-400">Job expectations</h2>
         <p><%= @job.expectations %></p>
     </div>
+    <%= link_to "Back", :back %>
 </div>
 

@@ -4,3 +4,7 @@
 
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
+//@import "font-awesome";
+/* issue with this line: conflict at the compilation 
+between tailwind and font-awesome.If I comment the font-awesome import,
+font-awesome looks like it still working and colors from tailwind are back*/

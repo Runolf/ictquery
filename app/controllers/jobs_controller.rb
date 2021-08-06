@@ -1,8 +1,9 @@
 class JobsController < ApplicationController
     protect_from_forgery with: :null_session #avoid the need to have a token
-
+    before_action 
     def index
        # @jobs = Job.all 
+       cookies[:message_exists] = false
 
        @q = Job.ransack(params[:q])
        @jobs = @q.result
@@ -51,7 +52,7 @@ class JobsController < ApplicationController
         )
 
         if alreadyApplied.exists? 
-            @messageExists = "applied"
+            cookies[:message_exists] = true
         else
             #puts job.name
             #puts user.username
@@ -67,14 +68,22 @@ class JobsController < ApplicationController
     def likeCompany
         company = Job.find(params[:id]).entreprise
         user = current_user
-
-        likedCompany = Favouriteentreprise.new(
-            dateAdded: DateTime.now,  
+        alreadyLiked = Favouriteentreprise.where(
             user_id: user.id,
             entreprise_id: company.id
         )
-
-        puts likedCompany
+        if alreadyLiked.exists?
+            cookies[:message_exists] = true 
+            redirect_back(fallback_location: root_path)
+        else
+            likedCompany = Favouriteentreprise.new(
+                dateAdded: DateTime.now,  
+                user_id: user.id,
+                entreprise_id: company.id
+            )
+            
+           # likedCompany.save
+        end 
     end
 
 end
