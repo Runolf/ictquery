@@ -1,3 +1,4 @@
+
 class CreatePortfolios < ActiveRecord::Migration[6.1]
   def change
     create_table :portfolios do |t|
@@ -20,7 +21,6 @@ class CreatePortfolios < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    # add_index :portfolios, :strength, using: 'gin'
-    # add_index :portfolios, :skill, using: 'gin'
   end
 end
+

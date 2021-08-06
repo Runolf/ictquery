@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
     protect_from_forgery with: :null_session #avoid the need to have a token
+
     def index
        # @jobs = Job.all 
 
@@ -10,6 +11,7 @@ class JobsController < ApplicationController
        .joins(:experience)
        .joins(:contracttype)
 
+       @countJob = @jobs.size
     end
 
     def show
@@ -42,14 +44,37 @@ class JobsController < ApplicationController
     def apply
         job = Job.find(params[:id])
         user = current_user
-
-        #puts job.name
-        #puts user.username
-        jobapplied = Jobapplied.create(
-            dateAdded: DateTime.now, 
+        
+        alreadyApplied = Jobapplied.where(
             job_id: job.id, 
-            user_id: user.id)
-        #puts jobapplied.job_id
-        #jobapplied.save
+            user_id: user.id
+        )
+
+        if alreadyApplied.exists? 
+            @messageExists = "applied"
+        else
+            #puts job.name
+            #puts user.username
+            jobapplied = Jobapplied.create(
+                dateAdded: DateTime.now, 
+                job_id: job.id, 
+                user_id: user.id)
+            #puts jobapplied.job_id
+            #jobapplied.save 
+        end
     end 
+
+    def likeCompany
+        company = Job.find(params[:id]).entreprise
+        user = current_user
+
+        likedCompany = Favouriteentreprise.new(
+            dateAdded: DateTime.now,  
+            user_id: user.id,
+            entreprise_id: company.id
+        )
+
+        puts likedCompany
+    end
+
 end

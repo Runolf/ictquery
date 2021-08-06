@@ -1,4 +1,5 @@
 
+
 <div >
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 
@@ -109,13 +110,12 @@
 						<div class="mb-5">
 						<label for="strengths" class="font-bold mb-1 text-gray-700 block">Strengths (max 3)</label>
 						<div class="overflow-y-scroll h-32 w-full px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium">
-							<% @strengths.each do |str| %>
+							<% @strengths.each do |strength| %>
 							<div class="flex flex-row items-center">
-								<%= form.check_box :str,  :class=>'form-checkbox', id:str %>
-								<%= form.label :str, str, :class=>'ml-2'%>	               
+								<%= form.check_box :strength, class:'form-checkbox', id:strength %>
+								<%= form.label :strength, strength, :class=>'ml-2'%>	
 							</div>
 							<% end %>
-               <%= form.hidden_field :strength, id:'strengths%>
 						</div>
 						</div>
 						<div class="form-group mb-5">
@@ -135,7 +135,7 @@
 										</div>
 										</div>
 									</div>
-                   <%= form.hidden_field :skill%>
+                   <%= form.hidden_field :skill, id:'tagging', :value => 'tags'%>
 									<!-- selections -->
 									<template x-for="(tag, index) in tags">
 										<div class="bg-indigo-100 inline-flex items-center text-sm rounded mt-2 mr-1">
@@ -370,24 +370,20 @@
 		}   
 
 		var checks = document.querySelectorAll(".form-checkbox");
-    
     var checkedChecks = document.querySelectorAll(".form-checkbox:checked");
 		var max = 3;
 		for (var i = 0; i < checks.length; i++)
   			checks[i].onclick = selectiveCheck;
 		function selectiveCheck (event) {
-      var array= [];
-  		var checkedChecks = document.querySelectorAll(".form-checkbox:checked");
-  		var input = document.getElementById("strengths").value;
+      var array= new Set();
+  		var checkedChecks = document.querySelectorAll(".form-checkbox:checked");     
       if (checkedChecks.length >= max + 1){
         return false;
       }else{
-         checkedChecks.forEach(e => {
-           e.value = e.id
-          console.log(e.value)
-          })
+         checkedChecks.forEach(e => array.add(e.id))
        console.log(array)
       }
+    		
 		}
 
 		function profilePic (e){
@@ -409,9 +405,8 @@
 			},
       
 			addTag(tag) {
-       var skills = document.getElementById('portfolio_skill').value 
+       var skills = document.getElementById('tagging').value 
        var tagging = []
-       skills = tagging
 				tag = tag.trim()
 				if (tag != "" && !this.hasTag(tag)) {
 					this.tags.push( tag )
@@ -419,7 +414,8 @@
 				this.clearSearch()
 				this.$refs.textInput.focus()
 				this.fireTagsUpdateEvent()
-        tagging.push([...tagging] + this.tags)       
+        tagging.push([...tagging] + this.tags)
+        skills = tagging
         
         console.log(skills)
 			},
@@ -811,7 +807,5 @@
  		}
 
 </script>
-
-
 
 
