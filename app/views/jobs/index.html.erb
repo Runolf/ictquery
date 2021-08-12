@@ -1,5 +1,5 @@
 <div class="text-base font-medium text-teal-600 py-2 px-4 rounded">
-    <h1 class='font-black text-6xl text-center'>Entreprises</h1>
+    <h1 class='font-black text-6xl text-center'>Jobs</h1>
 </div>
 <!--
     Using ransack gem for the filter. 
@@ -53,14 +53,6 @@
     <% end %>
 </aside>
 
-<% if cookies[:message_exists] == false %>
-    <p> false </p>
-<% end %>
-
-<% if cookies[:message_exists] == true %>
-    <p> true </p>
-<% end %>
-
 <% @jobs.each do |job|%>
     <div class="bg-teal-700 rounded-lg shadow-lg mt-8 w-2/5 mx-auto">
     <div class="flex flex-row justify-center">
@@ -78,4 +70,23 @@
         </div>
     </div>
 <% end %>
+
+<br/><br/><br/>
+<div class="text-base font-medium text-teal-600 py-2 px-4 rounded pb-6">
+    <h1 class='font-black text-6xl text-center'>Companies</h1>
+</div>
+<div class="flex flex-row justify-center gap-4 flex-wrap">
+<% @entreprises.each do |e|%>
+    <div class="m-4 bg-teal-700 rounded-lg shadow-lg w-2/12 h-48 font-black text-2xl text-center">
+        <%= e.name %>
+    </div>
+    <div class="m-4 bg-teal-700 rounded-lg shadow-lg w-2/12 h-48 font-black text-2xl text-center">
+        <%= e.name %>
+    </div>
+    <div class="m-4 bg-teal-700 rounded-lg shadow-lg w-2/12 h-48 font-black text-2xl text-center">
+        <%= e.name %>
+    </div>
+<% end %>
+</div>
+
 

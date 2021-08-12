@@ -13,6 +13,8 @@ class JobsController < ApplicationController
        .joins(:contracttype)
 
        @countJob = @jobs.size
+
+       @entreprises = Entreprise.all
     end
 
     def show
