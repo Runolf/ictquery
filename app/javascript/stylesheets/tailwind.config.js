@@ -6,6 +6,7 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js'
   ],
+  important: true, // add ' !important to all css class '
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
