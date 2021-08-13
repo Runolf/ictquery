@@ -76,13 +76,12 @@
     <h1 class='font-black text-6xl text-center'>Companies</h1>
 </div>
 <div class="flex flex-row justify-center gap-4 flex-wrap">
-<% @entreprises.each do |e|%>
-    <div class="m-4 bg-teal-700 rounded-lg shadow-lg w-2/12 h-48 font-black text-2xl text-center">
-        <%= e.name %>
+    <% @entreprises.each do |e|%>
+        <div class="m-4 bg-teal-700 rounded-lg shadow-lg w-2/12 h-48 font-black text-2xl text-center">
+            <%= e.name %>
             <%= image_tag "/logoEntreprise/"+ e.logo, style: 'display: block; margin-left: auto; margin-right: auto; width: 50%;' %>
-    </div>
-    </div>
-<% end %>
+        </div>
+    <% end %>
 </div>
 
 
