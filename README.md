@@ -1,14 +1,44 @@
 # README
 
-Cd desktop Clone:
-(I should fork from MikailMilissen, and clone from mine) git clone https://github.com/Runolf/ictquery.git
+## What is that project?
 
-To check status:
-git remote -v
+This is a project made during my bachelor's internship for the company [Qiwie.](https://fr.qiwie.com)
+Its purpose is to give people the possibility to search, find, apply to jobs,
+create his profile, find companies, like jobs and companies etc.  
+I was working with 3 others developpers that was junior like me.
+
+## Technologies
+
+| Types         | Technologies  |
+| ------------- |:-------------:|
+| Back-end      | Ruby 3.0.1    |
+|               | Rails 6.1.4   |
+| Front-end     | Ruby 3.0.1    |
+|               | Rails 6.1.4   |
+| Database      | Postgresql    |
+| CSS           | Tailwind 2.2.4|
+
+## Gems
+
+* ransack
+* font-awesome-rails
+* carrierwave
+* devise
+* omniauth
+* omniauth-facebook
+* wicked
+
+## Installation
+
+Cd desktop Clone:
+git clone https://github.com/Runolf/ictquery.git
 
     origin https://github.com/Runolf/ictquery.git (fetch) origin https://github.com/Runolf/ictquery.git (push)
 
 git remote add upstream https://github.com/Runolf/ictquery.git
+
+To check status:
+git remote -v
 
 git checkout master git fetch upstream
 
