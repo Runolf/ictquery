@@ -63,7 +63,7 @@ class JobsController < ApplicationController
                 job_id: job.id, 
                 user_id: user.id)
             #puts jobapplied.job_id
-            #jobapplied.save 
+            jobapplied.save 
         end
     end 
 
@@ -84,7 +84,7 @@ class JobsController < ApplicationController
                 entreprise_id: company.id
             )
             
-           # likedCompany.save
+           likedCompany.save
         end 
     end
 
