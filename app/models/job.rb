@@ -11,5 +11,9 @@ class Job < ActiveRecord::Base
         else
             all
         end
-    end    
+    end
+
+    def self.ransackable_attributes(auth_object = nil)
+
+    end
 end

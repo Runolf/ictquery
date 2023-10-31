@@ -16,38 +16,42 @@
     Technologies
         Javascript, Python, Ruby, C#, Java, ...         DONE
 -->
+
+
 <aside class="float-left w-60 p-8 bg-teal-700 m-1">
     <div class="text-xs font-light text-teal-200"><%= @countJob %> jobs found.</div>
    <%= search_form_for @q do |j|%>
         <h4 class="text-2xl text-teal-200">Filtre</h4>
         <div class="text-lg text-teal-400">
 
-            <%= fa_icon "location-arrow" %>
-            <%= j.label :adresse_postalCode_cont, 'Code postal' %>
-            <%= j.search_field :adresse_postalCode_cont %>
-            <br/>
-            
+            <!--
+                  /!\ the lines j.search... throw the error "undefined method `include?' for nil:NilClass"
+                  no idea why.
+
+                  I remove those lines and put it here to be able to display the page for now:
+
+                  j.collection_select :contracttype_id_eq, Contracttype.all, :id, :name, include_blank: true
+                  j.search_field :entreprise_name_cont
+                  j.collection_select :experience_id_eq, Experience.all, :id, :name, include_blank: true
+                  j.search_field :name_cont
+
+            -->
             <%= fa_icon "file-alt" %>
-            <%= j.label :contracttype_name_cont, 'Contract type?'%>
-             <%= j.collection_select :contracttype_id_eq, Contracttype.all, :id, :name, include_blank: true %>
+            <%= j.label :contracttype_name_cont_not_null, 'Contract type?'%>
 
             <br/>
             <%= fa_icon "building" %>
             <%= j.label :entreprise_name_cont, 'Entreprise?'%>
-            <%= j.search_field :entreprise_name_cont %>
 
             <br/>
             <%= fa_icon "laptop" %>
             <%= j.label :experience_id_eq, 'Experience' %>
             <br/>
-            <%= j.collection_select :experience_id_eq, Experience.all, :id, :name, include_blank: true %>
-            
-            <br/>
+
             <%= fa_icon "cogs" %>
             <%= j.label :name_cont, 'Technology?' %>
-            <%= j.search_field :name_cont %>
         </div>
-        
+
         <br/>
         <div class="bg-teal-900 py-2 px-4 rounded-md hover:bg-teal-400"><%=j.submit %></div>
     <% end %>
